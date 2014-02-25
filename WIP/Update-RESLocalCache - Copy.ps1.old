@@ -1,0 +1,39 @@
+<#
+# Forcing a local cache update for Workspace Manager
+# Michaja van der Zouwen
+# http://itmicah.wordpress.com/2013/10/30/res-workspace-manager-create-a-force-cache-update-application/
+# todo: only remote citrix server not local server
+#>
+
+<#
+.Synopsis
+   Forcing a local cache update for Workspace Manager / PowerFuse.
+.DESCRIPTION
+   Forcing a local cache update for Workspace Manager / PowerFuse.
+.EXAMPLE
+   Update-RESLocalCache
+#>
+function Update-RESLocalCache {
+[CmdletBinding()] 
+param (
+   
+)
+    Write-Verbose 'Forcing a local cache update for RES Powerfuse / Workspace Manager.'
+
+    $ResPath = Get-RESRegistryPath	 
+    $Path = Join-Path $ResPath "\UpdateGUIDs"
+    if (!(Test-Path $path)){
+        Write-Warning "Couldn't locate the registry keys for RES Powerfuse / Workspace Manager"
+        break
+    } #end if
+    
+    Remove-Itemproperty -Path $path -name Global -Verbose
+
+    Do {
+        Write-Host '.' -NoNewline
+        $result = Get-Itemproperty -Path $path -Name Global -ErrorAction SilentlyContinue
+        Sleep -Milliseconds 50
+    } Until ($result -ne $null)
+
+    Write-Verbose 'Local cache update for RES Powerfuse / Workspace Manager is succefully forced.'
+ }
