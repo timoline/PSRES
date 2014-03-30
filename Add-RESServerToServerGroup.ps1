@@ -20,7 +20,7 @@ function Add-RESServerToServerGroup
     (
         # Servername
         [Parameter(Position=0, Mandatory=$true, ValueFromPipeline=$true)]
-        [Alias("ComputerName")] 
+        [Alias("CN","ComputerName","__SERVER")] 
         [string[]]
         $Server,
 
