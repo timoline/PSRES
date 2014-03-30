@@ -15,22 +15,24 @@
 .EXAMPLE
    Enable-RESTracing -Logfile "C:\TMP"
 #>
-Function Enable-RESTracing {
-[CmdletBinding()] 
-param (
-    # The name of the computer to connect to.
-    [Parameter(Position=0, Mandatory=$true,ValueFromPipeline=$true)]
-    [String]
-    $ComputerName,
+Function Enable-RESTracing 
+{
+    [CmdletBinding()] 
+    param 
+    (
+        # The name of the computer to connect to.
+        [Parameter(Position=0, Mandatory=$true,ValueFromPipeline=$true)]
+        [String]
+        $ComputerName,
 
-    [Parameter()]
-    [String]
-    $Logfile="c:\RESTrace.log",
+        [Parameter()]
+        [String]
+        $Logfile="c:\RESTrace.log",
     
-    # The credential used to connect
-    [Management.Automation.PSCredential]
-    $Credential
-)
+        # The credential used to connect
+        [Management.Automation.PSCredential]
+        $Credential
+    )
     Write-Verbose 'Enabling RESTracing'
 
     $Path = Get-RESRegistryPath
@@ -54,9 +56,10 @@ param (
     $acl | Set-Acl $Logfile
 
     #error checking
-    if (!(Test-Path $LogFile)){
+    if (!(Test-Path $LogFile))
+    {
         Write-Warning "Log file ($Logfile) does not seem to exist!"
-        }
+    }
     
     Write-Verbose 'RESTracing is enabled.'
-  } #end Function
+} #end Function
