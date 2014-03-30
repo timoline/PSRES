@@ -36,7 +36,8 @@ function Add-RESServerToServerGroup
         $RESPFDIR =  Get-RESInstallDir
         $pwrtech = Join-Path $RESPFDIR "pwrtech.exe"
 
-        Foreach ($Srv in $Server) {
+        Foreach ($Srv in $Server) 
+        {
             $ServerArg = "/serveradd=$Srv"
             $ServerGroupArg = "/group=$ServerGroup"
   

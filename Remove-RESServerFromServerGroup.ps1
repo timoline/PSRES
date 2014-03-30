@@ -40,7 +40,8 @@ function Remove-RESServerFromServerGroup
         $RESPFDIR =  Get-RESInstallDir
         $pwrtech = Join-Path $RESPFDIR "pwrtech.exe"
 
-        Foreach ($Srv in $Server) {
+        Foreach ($Srv in $Server) 
+        {
             $ServerArg = "/serverremove=$Srv"
             $ServerGroupArg = "/group=$ServerGroup"
   
