@@ -48,6 +48,6 @@ function Remove-RESServerFromServerGroup
             & $pwrtech $ServerArg $ServerGroupArg 
             #Write-Host $pwrtech $ServerArg $ServerGroupArg  
         }
-    }
+    }#Process
 
 }

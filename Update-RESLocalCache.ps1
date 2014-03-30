@@ -6,18 +6,16 @@
 .EXAMPLE
    Update-RESLocalCache -ComputerName "SRV0001"
 #>
-function Update-RESLocalCache {
-[CmdletBinding()] 
-param (
-[Parameter(
-	Position=0,
-    Mandatory = $true,
-	ValueFromPipeline=$true,
-	ValueFromPipelineByPropertyName=$true
-)]		
-[Alias("CN","__SERVER","IPAddress")]
-[string[]]$ComputerName=""   
-)
+function Update-RESLocalCache 
+{
+    [CmdletBinding()] 
+    param 
+    (
+        [Parameter(Position=0,Mandatory = $true,ValueFromPipeline=$true,ValueFromPipelineByPropertyName=$true)]		
+        [Alias("CN","__SERVER","IPAddress")]
+        [string[]]$ComputerName=""   
+    )
+
     foreach($c in $ComputerName)
     {	
         Write-Verbose 'Forcing a local cache update for RES Powerfuse / Workspace Manager.'
