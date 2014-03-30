@@ -58,7 +58,7 @@ Function Enable-RESTracing
     #error checking
     if (!(Test-Path $LogFile))
     {
-        Write-Warning "Log file ($Logfile) does not seem to exist!"
+        Write-Error "Log file ($Logfile) does not exist!"
     }
     
     Write-Verbose 'RESTracing is enabled.'
