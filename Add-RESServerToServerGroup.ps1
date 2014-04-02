@@ -33,11 +33,13 @@ function Add-RESServerToServerGroup
 
     Process
     {
+        Write-Verbose "Starting to add a Server to a RESServerGroup"
         $RESPFDIR =  Get-RESInstallDir
         $pwrtech = Join-Path $RESPFDIR "pwrtech.exe"
 
         Foreach ($Srv in $Server) 
         {
+            Write-Verbose "Add Server $Srv to RESServerGroup $ServerGroup"
             $ServerArg = "/serveradd=$Srv"
             $ServerGroupArg = "/group=$ServerGroup"
   

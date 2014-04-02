@@ -31,11 +31,11 @@ function Update-RESLocalCache
         #stop, wait and start the service
         (Get-Service -ComputerName $c | where {$_.name -eq "RES"}).stop()
         (Get-Service -ComputerName $c | where {$_.name -eq "RES"}).WaitForStatus("Stopped")
-        Write-Verbose 'Service Stopped.'        
+        Write-Verbose 'RES Service Stopped.'        
         
         (Get-Service -ComputerName $c | where {$_.name -eq "RES"}).start()
         (Get-Service -ComputerName $c | where {$_.name -eq "RES"}).WaitForStatus("Running")
-        Write-Verbose 'Service Started.'
+        Write-Verbose 'RES Service Started.'
     
         Write-Verbose 'Local cache update for RES Powerfuse / Workspace Manager is succefully forced.'
     }

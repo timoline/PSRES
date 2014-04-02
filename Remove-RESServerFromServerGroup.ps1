@@ -37,11 +37,13 @@ function Remove-RESServerFromServerGroup
 
     Process
     {
+        Write-Verbose "Starting to remove a Server From a RESServerGroup"
         $RESPFDIR =  Get-RESInstallDir
         $pwrtech = Join-Path $RESPFDIR "pwrtech.exe"
 
         Foreach ($Srv in $Server) 
         {
+            Write-Verbose "Remove Server $Srv from RESServerGroup $ServerGroup"
             $ServerArg = "/serverremove=$Srv"
             $ServerGroupArg = "/group=$ServerGroup"
   
