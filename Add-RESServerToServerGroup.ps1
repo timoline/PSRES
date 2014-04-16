@@ -19,9 +19,9 @@ function Add-RESServerToServerGroup
     Param
     (
         # Servername
-        [Parameter(Position=0, Mandatory=$true, ValueFromPipeline=$true)]
+        [Parameter(Position=0, Mandatory=$true, ValueFromPipelineByPropertyName=$true, ValueFromPipeline=$true)]
         [Alias("CN","ComputerName","__SERVER")] 
-        [string[]]
+        [string]
         $Server,
 
         # Servergroup
@@ -36,15 +36,12 @@ function Add-RESServerToServerGroup
         Write-Verbose "Starting to add a Server to a RESServerGroup"
         $RESPFDIR =  Get-RESInstallDir
         $pwrtech = Join-Path $RESPFDIR "pwrtech.exe"
-
-        Foreach ($Srv in $Server) 
-        {
-            Write-Verbose "Add Server $Srv to RESServerGroup $ServerGroup"
-            $ServerArg = "/serveradd=$Srv"
-            $ServerGroupArg = "/group=$ServerGroup"
+ 
+        Write-Verbose "Add Server $Server to RESServerGroup $ServerGroup"
+        $ServerArg = "/serveradd=$Server"
+        $ServerGroupArg = "/group=$ServerGroup"
   
-            & $pwrtech $ServerArg $ServerGroupArg 
-            #Write-Host $pwrtech $ServerArg $ServerGroupArg  
-        }
-    }
+        & $pwrtech $ServerArg $ServerGroupArg 
+        #Write-Host $pwrtech $ServerArg $ServerGroupArg       
+    }#Process
 }

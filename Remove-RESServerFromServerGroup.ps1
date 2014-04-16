@@ -23,9 +23,9 @@ function Remove-RESServerFromServerGroup
     Param
     (
         # Servername
-        [Parameter(Position=0, Mandatory=$true, ValueFromPipeline=$true)]
+        [Parameter(Position=0, Mandatory=$true, ValueFromPipelineByPropertyName=$true, ValueFromPipeline=$true)]
         [Alias("ComputerName")] 
-        [string[]]
+        [string]
         $Server,
 
         # Servergroup
@@ -41,15 +41,11 @@ function Remove-RESServerFromServerGroup
         $RESPFDIR =  Get-RESInstallDir
         $pwrtech = Join-Path $RESPFDIR "pwrtech.exe"
 
-        Foreach ($Srv in $Server) 
-        {
-            Write-Verbose "Remove Server $Srv from RESServerGroup $ServerGroup"
-            $ServerArg = "/serverremove=$Srv"
-            $ServerGroupArg = "/group=$ServerGroup"
+        Write-Verbose "Remove Server $Server from RESServerGroup $ServerGroup"
+        $ServerArg = "/serverremove=$Server"
+        $ServerGroupArg = "/group=$ServerGroup"
   
-            & $pwrtech $ServerArg $ServerGroupArg 
-            #Write-Host $pwrtech $ServerArg $ServerGroupArg  
-        }
+        & $pwrtech $ServerArg $ServerGroupArg 
+        #Write-Host $pwrtech $ServerArg $ServerGroupArg         
     }#Process
-
 }
