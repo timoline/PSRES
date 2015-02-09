@@ -1,10 +1,27 @@
-﻿function Get-ParamSW ($Paramsw,$Value) 
+﻿function Get-ParamSW 
 {
-    if ($Paramsw -eq $true)
-    { 
-        return $Value
-    } else 
+    [CmdletBinding()] 
+    param ( 
+        # The Parameter of the switch
+        [Parameter()]
+        [string] 
+        $Paramsw,
+        
+        # The Value of the switch
+        [Parameter()]
+        [string] 
+        $Value 
+    
+    )
+    process 
     {
-        return $null
-    }  
+        if ($Paramsw -eq $true)
+        { 
+            return $Value
+        } 
+        else 
+        {
+            return $null
+        }  
+    }#process 
 }
