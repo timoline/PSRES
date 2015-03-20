@@ -9,7 +9,7 @@
 .Synopsis
    Enable RES Tracing for RES Powerfuse / Workspace Manager
 .DESCRIPTION
-   Enable RES Tracing for RES Powerfuse / Workspace Manager
+   Enable RES Tracing for RES Powerfuse / Workspace Manager, only on local computer
 .EXAMPLE
    Enable-RESTracing 
 .EXAMPLE
@@ -20,18 +20,9 @@ Function Enable-RESTracing
     [CmdletBinding()] 
     param 
     (
-        # The name of the computer to connect to.
-        [Parameter(Position=0, Mandatory=$true,ValueFromPipeline=$true)]
-        [String]
-        $ComputerName,
-
         [Parameter()]
         [String]
-        $Logfile="c:\RESTrace.log",
-    
-        # The credential used to connect
-        [Management.Automation.PSCredential]
-        $Credential
+        $Logfile="c:\RESTrace.log"
     )
     Write-Verbose 'Enabling RESTracing'
 
@@ -43,7 +34,7 @@ Function Enable-RESTracing
     Set-ItemProperty -name "TraceFile" -Path $path -Value $Logfile -Verbose
 
     #stop, wait and start the service
-    (Get-Service -ComputerName| where {$_.name -eq "RES"}).stop()
+    (Get-Service | where {$_.name -eq "RES"}).stop()
     (Get-Service | where {$_.name -eq "RES"}).WaitForStatus("Stopped")
     (Get-Service | where {$_.name -eq "RES"}).start()
     (Get-Service | where {$_.name -eq "RES"}).WaitForStatus("Running")

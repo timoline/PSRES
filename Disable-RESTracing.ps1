@@ -2,7 +2,7 @@
 .Synopsis
    Disable RES Tracing for RES Powerfuse / Workspace Manager
 .DESCRIPTION
-   Disable RES Tracing for RES Powerfuse / Workspace Manager
+   Disable RES Tracing for RES Powerfuse / Workspace Manager, only on local computer
 .EXAMPLE
    Disable-RESTracing
 #>
@@ -11,14 +11,7 @@ Function Disable-RESTracing
 [CmdletBinding()] 
     param 
     (
-        # The name of the computer to connect to.
-        [Parameter(Position=0, Mandatory=$true)]
-        [String]
-        $ComputerName,
-    
-        # The credential used to connect
-        [Management.Automation.PSCredential]
-        $Credential
+
     )
     Write-Verbose 'Disabling RESTracing'
     
