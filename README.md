@@ -4,6 +4,8 @@ RES
 RES powershell module
 
 * Add-RESServerToServerGroup
+* Disable-RESTracing
+* Enable-RESTracing
 * Get-RESApps
 * Get-RESDBInfo
 * Get-RESInstallDir
