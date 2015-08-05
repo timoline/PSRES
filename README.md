@@ -1,4 +1,4 @@
-RES
+PSRES
 ===
 
 RES powershell module
@@ -8,11 +8,18 @@ RES powershell module
 * Enable-RESTracing
 * Get-RESApps
 * Get-RESDBInfo
+* Get-RESGlobalAuthorised
 * Get-RESInstallDir
 * Get-RESLocalCachePath
+8 Get-RESMappings
 * Get-RESPowerzones
 * Get-RESPrinters
 * Get-RESRegistryPath
+* Get-RESRegs
+* Get-RESServerGroups
+* Get-RESSubst
+* Get-RESVars
+* Get-RESWorkspaces
 * Remove-RESServerFromServerGroup
 * Update-RESLocalCache
 
