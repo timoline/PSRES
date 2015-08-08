@@ -30,8 +30,8 @@ Filter Get-RESWorkspaceName
 {
     [CmdletBinding()] 
     param ( 
-        # The guid - pattern of the guid
-        [Parameter(Mandatory=$true)]
+        # The guid 
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
         [string] 
         $Guid       
     )
@@ -44,8 +44,8 @@ Filter Get-RESPowerzoneName
 {
     [CmdletBinding()] 
     param ( 
-        # The guid - pattern of the guid
-        [Parameter(Mandatory=$true)]
+        # The guid 
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
         [string] 
         $Guid       
     )
