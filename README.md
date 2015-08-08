@@ -11,7 +11,7 @@ RES powershell module
 * Get-RESGlobalAuthorised
 * Get-RESInstallDir
 * Get-RESLocalCachePath
-8 Get-RESMappings
+* Get-RESMappings
 * Get-RESPowerzones
 * Get-RESPrinters
 * Get-RESRegistryPath
