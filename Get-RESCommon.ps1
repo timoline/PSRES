@@ -37,7 +37,7 @@ Filter Get-RESWorkspaceName
     )
     #$Guid = "{E536D09E-3DA0-464A-84A5-F520C43C1429}"
     $Value = Get-RESWorkspaces -Guid $Guid     
-    return $Value.name.ToString()
+    return $Value.name.node."#text" 
 }
 
 Filter Get-RESPowerzoneName
@@ -51,5 +51,5 @@ Filter Get-RESPowerzoneName
     )
     #$Guid = "{EF0E53B1-B968-48EF-8089-C3ABB154E34F}"
     $Value = Get-RESPowerzones -Guid $Guid 
-    return $Value.name.ToString()
+    return $Value.name.node."#text" 
 }
