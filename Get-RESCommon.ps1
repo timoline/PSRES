@@ -53,3 +53,17 @@ Filter Get-RESPowerzoneName
     $Value = Get-RESPowerzones -Guid $Guid 
     return $Value.name.node."#text" 
 }
+
+Filter Get-RESServerGroupServers
+{
+    [CmdletBinding()] 
+    param ( 
+        # The ServerGroup 
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+        [alias('Name','Objectdesc')]  
+        [string] 
+        $ServerGroup       
+    )
+    $Value = Get-RESServerGroups -Objectdesc $ServerGroup
+    $Value.servers.node."#text" 
+}
