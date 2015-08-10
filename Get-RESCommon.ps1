@@ -64,6 +64,6 @@ Filter Get-RESServerGroupServers
         [string] 
         $ServerGroup       
     )
-    $Value = Get-RESServerGroups -Objectdesc $ServerGroup
+    $Value = Get-RESServerGroups -ServerGroup $ServerGroup
     $Value.servers.node."#text" 
 }

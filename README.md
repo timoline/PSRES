@@ -12,13 +12,16 @@ RES powershell module
 * Get-RESInstallDir
 * Get-RESLocalCachePath
 * Get-RESMappings
+* Get-RESPowerzoneName
 * Get-RESPowerzones
 * Get-RESPrinters
 * Get-RESRegistryPath
 * Get-RESRegs
 * Get-RESServerGroups
+* Get-RESServerGroupServers
 * Get-RESSubst
 * Get-RESVars
+* Get-RESWorkspaceName
 * Get-RESWorkspaces
 * Remove-RESServerFromServerGroup
 * Update-RESLocalCache
