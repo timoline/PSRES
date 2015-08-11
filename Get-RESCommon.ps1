@@ -74,7 +74,7 @@ function Get-RESMenuPath
     param ( 
 
         # The AppID
-        [Parameter()]
+        [Parameter(Mandatory=$true)]
         [string] 
         $AppID       
     )
