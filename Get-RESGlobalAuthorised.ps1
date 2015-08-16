@@ -35,7 +35,8 @@ function Get-RESGlobalAuthorised
         $LocalCachePath = Get-RESLocalCachePath
 
         $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml       = Join-Path $PwfObjectPath 'sec_globauth.xml'
+        $Xml = Join-Path $PwfObjectPath "sec_globauth.xml"
+        $XPath = "//authfile"
     }
 
     process 
@@ -100,7 +101,7 @@ function Get-RESGlobalAuthorised
 
     end 
     {
-        $Node = Select-Xml -Path $Xml -XPath '//authfile' | Select-Object -ExpandProperty node 
+        $Node = Select-Xml -Path $Xml -XPath $XPath | Select-Object -ExpandProperty node 
 
         if ($node)
         {
