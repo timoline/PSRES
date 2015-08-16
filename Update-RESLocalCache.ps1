@@ -1,4 +1,4 @@
-<#
+﻿<#
 .Synopsis
    Forcing a local cache update for Workspace Manager / PowerFuse.
 .DESCRIPTION
