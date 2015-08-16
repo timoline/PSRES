@@ -159,33 +159,33 @@ function Get-RESApps
                 $accesscontrol = New-Object PSObject -property @{
                     accesstype = $accesstype
                     group = $grouplist
-                    notgrouplist = $notgrouplist
+                    notgroup = $notgrouplist
                 }
 
 
 				$Prop = @{
 					Guid = $Guid;
 					Title = $Title;
-					Description = $Description;
-					CommandLine = $CommandLine;
-					Command  = $Command;
-					CommandPath = $CommandPath;
-					Workingdir = $WorkingDir;
-					Parameters = $Parameters;
-					accesscontrol = $accesscontrol;                 
-					Subscribed = $Subscribed; 
-					Enabled = $Enabled;
-					HideFromMenu = $HideFromMenu;
-					AppID = $AppID;
-					MenuPath = $MenuPath;
-					AdministrativeNote = $AdministrativeNote;
-					UnmanagedShortcuts = $UnmanagedShortcuts;
-					Startmenu = $Startmenu;
-					Desktop = $Desktop;
-					AutoAll = $AutoAll;
-					Startstyle = $Startstyle;
-					SystemTray = $SystemTray;
-					Quicklaunch = $Quicklaunch;
+					Description = $Description
+					CommandLine = $CommandLine
+					Command  = $Command
+					CommandPath = $CommandPath
+					Workingdir = $WorkingDir
+					Parameters = $Parameters
+					accesscontrol = $accesscontrol             
+					Subscribed = $Subscribed
+					Enabled = $Enabled
+					HideFromMenu = $HideFromMenu
+					AppID = $AppID
+					MenuPath = $MenuPath
+					AdministrativeNote = $AdministrativeNote
+					UnmanagedShortcuts = $UnmanagedShortcuts
+					Startmenu = $Startmenu
+					Desktop = $Desktop
+					AutoAll = $AutoAll
+					Startstyle = $Startstyle
+					SystemTray = $SystemTray
+					Quicklaunch = $Quicklaunch
 					CitrixDN = $CitrixDN
 					workspacecontrol = $workspacecontrol
 				}
