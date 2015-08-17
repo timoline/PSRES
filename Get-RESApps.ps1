@@ -16,7 +16,7 @@
    -----------
    Shows all disabled applications with "expl*" in the title
 .EXAMPLE
-   Get-RESApps -AppID "38"
+   Get-RESApps -AppID 38
    
    Description
    -----------
@@ -97,10 +97,8 @@ function Get-RESApps
     {
         Write-Verbose 'Getting info from RES Powerfuse / Workspace manager local DBCache'
     
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml     = Join-Path $PwfObjectPath "apps.xml"       
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml     = Join-Path $RESObjectsPath "apps.xml"       
         $XPath = "//application"
 
     }#begin 

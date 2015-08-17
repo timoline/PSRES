@@ -22,11 +22,8 @@ function Get-RESMappings
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "pl_map.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "pl_map.xml"
         $XPath = "//mapping"
     }
 

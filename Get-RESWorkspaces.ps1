@@ -30,11 +30,8 @@ function Get-RESWorkspaces
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "workspaces.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "workspaces.xml"
         $XPath = "//workspace"
     }
 

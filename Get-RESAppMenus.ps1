@@ -36,11 +36,8 @@ function Get-RESAppMenus
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "app_menus.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "app_menus.xml"
         $XPath = "//applicationmenu"
     }
 

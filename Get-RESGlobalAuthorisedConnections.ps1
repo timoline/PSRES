@@ -25,11 +25,8 @@ function Get-RESGlobalAuthorisedConnections
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "sec_globauthip.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "sec_globauthip.xml"
         $XPath = "//authip"
     }
 

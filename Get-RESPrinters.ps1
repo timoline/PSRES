@@ -31,11 +31,8 @@ function Get-RESPrinters
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "pl_prn.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "pl_prn.xml"
         $XPath = "//printermapping"             
     }
 

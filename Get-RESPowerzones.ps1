@@ -33,11 +33,8 @@ function Get-RESPowerzones
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "pwrzone.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "pwrzone.xml"
         $XPath = "//powerzone"        
     }
 
@@ -66,6 +63,7 @@ function Get-RESPowerzones
                 $filter = select-xml -xml $Node -XPath './/powerzonerules/rule/filter'
                 $type2 = select-xml -xml $Node -XPath './/powerzonerules/rule/type2'
                 $filter2 = select-xml -xml $Node -XPath './/powerzonerules/rule/filter2'
+                $comments = select-xml -xml $Node -XPath './/powerzonerules/rule/comments'
                 $enabled = select-xml -xml $Node -XPath './/powerzonerules/rule/enabled'
 
                 $powerzonerules = New-Object PSObject -property @{
@@ -73,6 +71,7 @@ function Get-RESPowerzones
                     filter = $filter
                     type2 = $type2
                     filter2 = $filter2
+                    comments = $comments
                     enabled = $enabled
                 }
               

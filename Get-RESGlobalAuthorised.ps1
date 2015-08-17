@@ -31,11 +31,8 @@ function Get-RESGlobalAuthorised
 
     begin 
     {
-
-        $LocalCachePath = Get-RESLocalCachePath
-
-        $PwfObjectPath = Join-Path $LocalCachePath "Objects"
-        $Xml = Join-Path $PwfObjectPath "sec_globauth.xml"
+        $RESObjectsPath = Get-RESObjectsPath
+        $Xml = Join-Path $RESObjectsPath "sec_globauth.xml"
         $XPath = "//authfile"
     }
 
