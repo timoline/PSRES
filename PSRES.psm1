@@ -1,4 +1,4 @@
-﻿function Test-ElevatedShell
+function Test-ElevatedShell
 {
 	$user = [Security.Principal.WindowsIdentity]::GetCurrent()
 	(New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
@@ -26,4 +26,4 @@ Get-ChildItem -Path $PSScriptRoot\*.ps1 | Foreach-Object{ . $_.FullName }
 #. $psScriptRoot\RES_ServerGroups.ps1
 
 # Export all commands except for Test-ElevatedShell
-Export-ModuleMember Function @(Get-Command Module $ExecutionContext.SessionState.Module | Where-Object {$_.Name -ne "Test-ElevatedShell"})
+Export-ModuleMember Function @(Get-Command -Module $ExecutionContext.SessionState.Module | Where-Object {$_.Name -ne "Test-ElevatedShell"})

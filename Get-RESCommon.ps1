@@ -31,7 +31,8 @@ Filter Get-RESWorkspaceName
     [CmdletBinding()] 
     param ( 
         # The guid 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [alias('Workspace')]  
         [string] 
         $Guid       
     )
@@ -45,7 +46,7 @@ Filter Get-RESPowerzoneName
     [CmdletBinding()] 
     param ( 
         # The guid 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
         [string] 
         $Guid       
     )
@@ -59,7 +60,7 @@ Filter Get-RESServerGroupServers
     [CmdletBinding()] 
     param ( 
         # The ServerGroup 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
         [alias('Name','Objectdesc')]  
         [string] 
         $ServerGroup       

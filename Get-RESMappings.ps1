@@ -16,8 +16,12 @@ function Get-RESMappings
         [Parameter()]
         [alias('Driveletter')]
         [string] 
-        $Device = "*"
-    
+        $Device = "*",
+
+        # The description
+        [Parameter()]
+        [string] 
+        $description = "*"    
     )
 
     begin 
@@ -109,7 +113,8 @@ function Get-RESMappings
         {
             $Node |
             Get-RESData | 
-            Where-Object {$_.Device -like $Device} 
+            Where-Object {$_.Device -like $Device} |
+            Where-Object {$_.description -like $description} 
         }            
     }
 }
