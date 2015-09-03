@@ -47,6 +47,7 @@ Filter Get-RESPowerzoneName
     param ( 
         # The guid 
         [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [alias('Powerzone')] 
         [string] 
         $Guid       
     )
