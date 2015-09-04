@@ -19,7 +19,8 @@ function Get-RESGlobalAuthorised
         
         # The Process [rwx]
         [Parameter()]
-        [alias('Permission')]        
+        [alias('Permission')]     
+        [ValidateSet("rxw","rx","r")]    
         [string] 
         $Operation = "*",
         
