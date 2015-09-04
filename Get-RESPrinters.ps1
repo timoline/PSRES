@@ -1,10 +1,5 @@
 ﻿<#
 
-###################
-Access werkt nog niet goed
-
-#####################
-
 .EXAMPLE 
     Get-RESPrinters -Location "*duiven*" -disabled | select printer, location
 #>

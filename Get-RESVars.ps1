@@ -17,6 +17,26 @@ function Get-RESVars
         [string] 
         $Name = "*",
 
+        # The Value 
+        [Parameter()]
+        [string] 
+        $Value = "*",
+
+        # The objectdesc 
+        [Parameter()]
+        [string] 
+        $Objectdesc = "*",
+
+        # The description 
+        [Parameter()]
+        [string] 
+        $Description = "*",
+
+        # The guid - pattern of the guid
+        [Parameter()]
+        [string] 
+        $Guid = "*", 
+
        # Var disabled 
         [Switch]
         $Disabled        
@@ -92,7 +112,11 @@ function Get-RESVars
         {
             $Node |
             Get-RESData | 
-            Where-Object {$_.Name -like $Name} |               
+            Where-Object {$_.Name -like $Name} |        
+            Where-Object {$_.value -like $Value} |    
+            Where-Object {$_.objectdesc -like $objectdesc} |  
+            Where-Object {$_.description -like $description} |  
+            Where-Object {$_.Guid -like $Guid} |                       
             Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }

@@ -12,10 +12,10 @@ function Get-RESSubst
 {
     [CmdletBinding()] 
     param ( 
-        # The Name 
+        # The VirtualDrive 
         [Parameter()]
         [string] 
-        $virtualdrive = "*",
+        $VirtualDrive = "*",
 
        # subst disabled 
         [Switch]

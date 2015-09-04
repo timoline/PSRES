@@ -1,8 +1,5 @@
 ﻿<#
-###################
-Rules/filters werkt nog niet goed
 
-#####################
 .EXAMPLE 
     Get-RESPowerzones -name "*test*" 
 #>

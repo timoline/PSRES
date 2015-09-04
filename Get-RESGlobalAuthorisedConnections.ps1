@@ -20,17 +20,17 @@ function Get-RESGlobalAuthorisedConnections
         # The remoteaddress 
         [Parameter()]
         [string] 
-        $remoteaddress = "*",  
+        $RemoteAddress = "*",  
  
         # The remotesubnet 
         [Parameter()]
         [string] 
-        $remotesubnet = "*", 
+        $RemoteSubnet = "*", 
                 
         # The remoteport 
         [Parameter()]
         [string] 
-        $remoteport = "*",                      
+        $RemotePort = "*",                      
         
        # Authorisation disabled 
         [Switch]

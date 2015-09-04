@@ -21,7 +21,7 @@ function Get-RESMappings
         # The description
         [Parameter()]
         [string] 
-        $description = "*",
+        $Description = "*",
         
        # disabled 
         [Switch]

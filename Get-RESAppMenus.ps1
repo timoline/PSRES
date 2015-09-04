@@ -16,17 +16,17 @@ function Get-RESAppMenus
         # The Name 
         [Parameter()]
         [string] 
-        $title = "*",
+        $Title = "*",
             
         # The objectdesc 
         [Parameter()]
         [string] 
-        $objectdesc = "*",
+        $Objectdesc = "*",
 
         # The description 
         [Parameter()]
         [string] 
-        $description = "*",
+        $Description = "*",
 
         # The guid - pattern of the guid
         [Parameter()]
