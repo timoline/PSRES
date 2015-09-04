@@ -18,10 +18,15 @@ function Get-RESAppMenus
         [string] 
         $title = "*",
             
-        # The Name 
+        # The objectdesc 
         [Parameter()]
         [string] 
         $objectdesc = "*",
+
+        # The description 
+        [Parameter()]
+        [string] 
+        $description = "*",
 
         # The guid - pattern of the guid
         [Parameter()]
@@ -91,6 +96,7 @@ function Get-RESAppMenus
             Get-RESData |
             Where-Object {$_.title -like $title} | 
             Where-Object {$_.objectdesc -like $objectdesc} |  
+            Where-Object {$_.description -like $description} |  
             Where-Object {$_.Guid -like $Guid} |                            
             Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}   
                
