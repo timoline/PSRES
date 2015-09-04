@@ -21,7 +21,11 @@ function Get-RESMappings
         # The description
         [Parameter()]
         [string] 
-        $description = "*"    
+        $description = "*",
+        
+       # disabled 
+        [Switch]
+        $Disabled            
     )
 
     begin 
@@ -114,7 +118,8 @@ function Get-RESMappings
             $Node |
             Get-RESData | 
             Where-Object {$_.Device -like $Device} |
-            Where-Object {$_.description -like $description} 
+            Where-Object {$_.description -like $description} |
+            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

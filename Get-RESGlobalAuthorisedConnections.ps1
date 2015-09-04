@@ -15,7 +15,22 @@ function Get-RESGlobalAuthorisedConnections
         # The Process 
         [Parameter()]
         [string] 
-        $Process = "*",        
+        $Process = "*",    
+
+        # The remoteaddress 
+        [Parameter()]
+        [string] 
+        $remoteaddress = "*",  
+ 
+        # The remotesubnet 
+        [Parameter()]
+        [string] 
+        $remotesubnet = "*", 
+                
+        # The remoteport 
+        [Parameter()]
+        [string] 
+        $remoteport = "*",                      
         
        # Authorisation disabled 
         [Switch]
@@ -93,6 +108,9 @@ function Get-RESGlobalAuthorisedConnections
             $Node |
             Get-RESData | 
             Where-Object {$_.Process -like $Process} |                             
+            Where-Object {$_.remoteaddress -like $remoteaddress} |  
+            Where-Object {$_.remotesubnet -like $remotesubnet} |  
+            Where-Object {$_.remoteport -like $remoteport} |  
             Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
