@@ -47,12 +47,16 @@ function Get-RESServerGroups
             )
             process 
             {
-                         
-                $servers = select-xml -xml $Node -XPath './/servers/server'
+                                         
                 $guid = select-xml -xml $Node -XPath './/guid'
                 $updateguid = select-xml -xml $Node -XPath './/updateguid'
                 $enabled = select-xml -xml $Node -XPath './/enabled' 
                 $objectdesc = select-xml -xml $Node -XPath './/objectdesc' 
+
+                $server = select-xml -xml $Node -XPath './/servers/server'
+                $servers = New-Object PSObject -property @{
+                    server = $server
+                }
 
                 $Prop = @{
                     servers = $servers

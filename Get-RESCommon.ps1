@@ -67,8 +67,8 @@ Filter Get-RESServerGroupServers
         [string] 
         $ServerGroup       
     )
-    $Value = Get-RESServerGroups -ServerGroup $ServerGroup
-    return $Value.servers.node."#text" 
+    $Value = Get-RESServerGroups -ServerGroup $ServerGroup | select -ExpandProperty servers
+    return $Value.server.node."#text" 
 }
 
 function Get-RESMenuPath
