@@ -71,11 +71,10 @@ function Get-RESWorkspaces
                 }
 
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
-                $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
-
+                $object = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $accesscontrol = New-Object PSObject -property @{
                     type = $type
-                    access = $access
+                    object = $object
                 }
                 
                 $Prop = @{

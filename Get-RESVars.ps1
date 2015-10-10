@@ -74,12 +74,12 @@ function Get-RESVars
                 $enabled = select-xml -xml $Node -XPath './/enabled' 
                 $objectdesc = select-xml -xml $Node -XPath './/objectdesc' 
                 $order = select-xml -xml $Node -XPath './/order' 
-                $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
-                $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
 
+                $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
+                $object = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $accesscontrol = New-Object PSObject -property @{
                     type = $type
-                    access = $access
+                    object = $object
                 }
 
                 $Prop = @{
