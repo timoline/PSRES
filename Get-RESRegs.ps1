@@ -58,14 +58,13 @@ function Get-RESRegs
                 $objectdesc = select-xml -xml $Node -XPath './/objectdesc' 
                 $order = select-xml -xml $Node -XPath './/order' 
 
-                $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
-                $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
-
                 $workspace = select-xml -xml $Node -XPath './/workspacecontrol/workspace' 
                 $workspacecontrol = New-Object PSObject -property @{
                     workspace = $workspace
                 }
 
+                $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
+                $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $accesscontrol = New-Object PSObject -property @{
                     type = $type
                     access = $access
