@@ -64,10 +64,14 @@ function Get-RESRegs
                 }
 
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
-                $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
+                $object = select-xml -xml $Node -XPath './/accesscontrol/access/object'
+                $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
+                $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
                     type = $type
-                    access = $access
+                    object = $object
+                    domain = $domain
+                    inheritance = $inheritance
                 }
 
                 $Prop = @{

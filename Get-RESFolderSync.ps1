@@ -6,9 +6,9 @@
 #####################
 
 .EXAMPLE 
-    Get-RESTasks
+    Get-RESFolderSync
 #>
-function Get-RESTasks
+function Get-RESFolderSync
 {
     [CmdletBinding()] 
     param ( 
@@ -26,8 +26,8 @@ function Get-RESTasks
     begin 
     {
         $RESObjectsPath = Get-RESObjectsPath
-        $Xml = Join-Path $RESObjectsPath "pl_task.xml"
-        $XPath = "//exttask"
+        $Xml = Join-Path $RESObjectsPath "pl_fsync.xml"
+        $XPath = "//foldersync"
     }
 
     process 
@@ -44,15 +44,23 @@ function Get-RESTasks
             process 
             {
                 $description = select-xml -xml $Node -XPath './description'                          
-                $command = select-xml -xml $Node -XPath './/command'
-                $waitforapplication = select-xml -xml $Node -XPath './/waitforapplication'  
-                $runonce = select-xml -xml $Node -XPath './/runonce'                               
-                $script = select-xml -xml $Node -XPath './/script'
-                $scriptext = select-xml -xml $Node -XPath './/scriptext'
-                $timeoutperiod = select-xml -xml $Node -XPath './/timeoutperiod'
-                $hideapplication = select-xml -xml $Node -XPath './/hideapplication'
-                $state = select-xml -xml $Node -XPath './/state'
-              
+                $localfolder = select-xml -xml $Node -XPath './/localfolder'
+                $remotefolder = select-xml -xml $Node -XPath './/remotefolder'  
+                $direction = select-xml -xml $Node -XPath './/direction'                               
+                $runatapplicationstart = select-xml -xml $Node -XPath './/runatapplicationstart'
+                $runatapplicationend = select-xml -xml $Node -XPath './/runatapplicationend'
+                $runatlogon = select-xml -xml $Node -XPath './/runatlogon'
+                $runatrefresh = select-xml -xml $Node -XPath './/runatrefresh'
+                $runatreconnect = select-xml -xml $Node -XPath './/runatreconnect'
+                $runatlogoff = select-xml -xml $Node -XPath './/runatlogoff'
+                $runatinterval = select-xml -xml $Node -XPath './/runatinterval'  
+                $waitforsync = select-xml -xml $Node -XPath './/waitforsync'                               
+                $excludereadonly = select-xml -xml $Node -XPath './/excludereadonly'
+                $excludehiddenfiles = select-xml -xml $Node -XPath './/excludehiddenfiles'
+                $excludesystemfiles = select-xml -xml $Node -XPath './/excludesystemfiles'
+                $saveinrecyclebin = select-xml -xml $Node -XPath './/saveinrecyclebin'
+                $state = select-xml -xml $Node -XPath './/runatreconnect'
+                             
                 $guid = select-xml -xml $Node -XPath './/guid'
                 $updateguid = select-xml -xml $Node -XPath './/updateguid'
                 $parentguid = select-xml -xml $Node -XPath './/parentguid'
@@ -78,13 +86,21 @@ function Get-RESTasks
 
                 $Prop = @{
                     description = $description       
-                    command = $command
-                    waitforapplication = $waitforapplication
-                    runonce = $runonce             
-                    script = $script
-                    scriptext = $scriptext
-                    timeoutperiod = $timeoutperiod
-                    hideapplication = $hideapplication
+                    localfolder = $localfolder
+                    remotefolder = $remotefolder
+                    direction = $direction             
+                    runatapplicationstart = $runatapplicationstart
+                    runatapplicationend = $runatapplicationend
+                    runatlogon = $runatlogon
+                    runatrefresh = $runatrefresh
+                    runatreconnect = $runatreconnect
+                    runatlogoff = $runatlogoff
+                    runatinterval = $runatinterval
+                    waitforsync = $waitforsync             
+                    excludereadonly = $excludereadonly
+                    excludehiddenfiles = $excludehiddenfiles
+                    excludesystemfiles = $excludesystemfiles
+                    saveinrecyclebin = $saveinrecyclebin
                     state = $state
 
                     accesscontrol = $accesscontrol
