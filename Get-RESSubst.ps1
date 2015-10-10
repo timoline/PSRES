@@ -56,6 +56,11 @@ function Get-RESSubst
                 $objectdesc = select-xml -xml $Node -XPath './/objectdesc' 
                 $order = select-xml -xml $Node -XPath './/order' 
 
+                $workspace = select-xml -xml $Node -XPath './/workspacecontrol/workspace' 
+                $workspacecontrol = New-Object PSObject -property @{
+                    workspace = $workspace
+                }
+
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
                 $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
@@ -75,6 +80,7 @@ function Get-RESSubst
                     state = $state
                     hidedrive = $hidedrive
                     accesscontrol = $accesscontrol
+                    workspacecontrol = $workspacecontrol
                     guid = $guid   
                     updateguid = $updateguid
                     parentguid = $parentguid                 
