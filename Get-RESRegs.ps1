@@ -50,7 +50,7 @@ function Get-RESRegs
                 $description = select-xml -xml $Node -XPath './description' 
                 $policysettings = select-xml -xml $Node -XPath './/policysettings'
                 $admfile = select-xml -xml $Node -XPath './/admfile'
-                $workspacecontrol = select-xml -xml $Node -XPath './/workspacecontrol'
+              
                 $guid = select-xml -xml $Node -XPath './/guid'
                 $updateguid = select-xml -xml $Node -XPath './/updateguid'
                 $parentguid = select-xml -xml $Node -XPath './/parentguid'
@@ -60,6 +60,11 @@ function Get-RESRegs
 
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
                 $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
+
+                $workspace = select-xml -xml $Node -XPath './/workspacecontrol/workspace' 
+                $workspacecontrol = New-Object PSObject -property @{
+                    workspace = $workspace
+                }
 
                 $accesscontrol = New-Object PSObject -property @{
                     type = $type

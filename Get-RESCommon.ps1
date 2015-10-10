@@ -3,12 +3,13 @@
     [CmdletBinding()] 
     param ( 
         # The Parameter of the switch
-        [Parameter()]
+        [Parameter(Mandatory=$true, Position=0)]
+        [ValidateSet("True","False")] 
         [string] 
         $Paramsw,
         
         # The Value of the switch
-        [Parameter()]
+        [Parameter(Mandatory=$true, Position=1)]
         [string] 
         $Value 
     
