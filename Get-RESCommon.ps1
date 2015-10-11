@@ -86,6 +86,7 @@ function Convert-RESGuidToWorkspace
     param ( 
         # The guid 
         [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [ValidatePattern('(\{|\()?[A-Za-z0-9]{4}([A-Za-z0-9]{4}\-?){4}[A-Za-z0-9]{12}(\}|\()?')]
         [alias('Workspace')]  
         [string] 
         $Guid       
@@ -101,6 +102,7 @@ function Convert-RESGuidToPowerzone
     param ( 
         # The guid 
         [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [ValidatePattern('(\{|\()?[A-Za-z0-9]{4}([A-Za-z0-9]{4}\-?){4}[A-Za-z0-9]{12}(\}|\()?')]
         [alias('Powerzone')] 
         [string] 
         $Guid       
