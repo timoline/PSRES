@@ -1,12 +1,11 @@
 ﻿<#
-
-###################
-
-
-#####################
-
-.EXAMPLE 
-    Get-RESGlobalAuthorisedConnections
+.SYNOPSIS
+   Shows authorised connections from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows authorised connections from RES Workspace Manager / Powerfuse
+.EXAMPLE  
+    Get-RESGlobalAuthorised -process "*iexplorer*" 
+    Shows authorised connections opened by the process iexplorer
 #>
 function Get-RESGlobalAuthorisedConnections 
 {

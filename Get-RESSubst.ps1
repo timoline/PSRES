@@ -1,12 +1,10 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the substitutes from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the substitutes from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESSubst 
+    Get-RESSubst
 #>
 function Get-RESSubst 
 {

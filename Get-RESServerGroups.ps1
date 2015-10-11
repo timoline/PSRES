@@ -1,12 +1,10 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the server groups from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the server groups from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESServerGroups 
+    Get-RESServerGroups
 #>
 function Get-RESServerGroups
 {

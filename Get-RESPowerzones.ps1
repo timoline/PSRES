@@ -1,7 +1,11 @@
 ﻿<#
-
-.EXAMPLE 
-    Get-RESPowerzones -name "*test*" 
+.SYNOPSIS
+   Shows the powerzones from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the powerzones from RES Workspace Manager / Powerfuse
+.EXAMPLE  
+    Get-RESPowerzones 
+    Shows the powerzones 
 #>
 function Get-RESPowerzones 
 {

@@ -1,12 +1,11 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPIS
+   Shows the munu from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the munu from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESAppMenus 
+    Get-RESAppMenus -disabled 
+    Shows the disabled menus
 #>
 function Get-RESAppMenus
 {

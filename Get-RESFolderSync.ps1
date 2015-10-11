@@ -1,12 +1,11 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the FolderSync from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the FolderSync from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESFolderSync
+    Get-RESFolderSync -disabled 
+    Shows the disabled FolderSync
 #>
 function Get-RESFolderSync
 {

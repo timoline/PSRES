@@ -4,14 +4,12 @@ The above command will add a Citrix server to a group.
 Example: “%programfiles%\res Workspace Manager\pwrtech.exe” /serveradd=CTX10 /group=CTXServerGroup
 #>
 <#
-.Synopsis
+.SYNOPSIS
    Add a Citrix server to a RES ServerGroup
 .DESCRIPTION
    Add a Citrix server to a RES ServerGroup
 .EXAMPLE
-   Example of how to use this cmdlet
-.EXAMPLE
-   Another example of how to use this cmdlet
+   Add-RESServerToServerGroup
 #>
 function Add-RESServerToServerGroup
 {

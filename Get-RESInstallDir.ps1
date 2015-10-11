@@ -1,4 +1,12 @@
-﻿Function Get-RESInstallDir 
+﻿<#
+.SYNOPSIS
+   Shows the install directory from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the install directory from RES Workspace Manager / Powerfuse
+.EXAMPLE 
+    Get-RESInstallDir
+#>
+Function Get-RESInstallDir 
 {
     [CmdletBinding()] 
     param()

@@ -1,12 +1,11 @@
 ﻿<#
-
-###################
-
-
-#####################
-
-.EXAMPLE 
-    Get-RESGlobalAuthorised 
+.SYNOPSIS
+   Shows authorised files from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows authorised files from RES Workspace Manager / Powerfuse
+.EXAMPLE  
+    Get-RESGlobalAuthorised -process "*iexplorer*" 
+    Shows authorised files opened by the process iexplorer
 #>
 function Get-RESGlobalAuthorised 
 {

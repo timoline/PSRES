@@ -8,14 +8,12 @@ Removes specified server from ALL groups at once.
 Example: “%programfiles%\res Workspace Manager\pwrtech.exe” /serverremove=CTX10 /group=*
 #>
 <#
-.Synopsis
+.SYNOPSIS
    Removes a Citix server from a specific RES ServerGroup
 .DESCRIPTION
    Removes a Citix server from a specific RES ServerGroup
 .EXAMPLE
-   Example of how to use this cmdlet
-.EXAMPLE
-   Another example of how to use this cmdlet
+   Remove-RESServerFromServerGroup
 #>
 function Remove-RESServerFromServerGroup
 {

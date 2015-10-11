@@ -1,10 +1,8 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the tasks from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the tasks from RES Workspace Manager / Powerfuse
 .EXAMPLE 
     Get-RESTasks
 #>

@@ -1,4 +1,12 @@
-﻿Function Get-RESVersion 
+﻿<#
+.SYNOPSIS
+   Shows the version of RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the version of RES Workspace Manager / Powerfuse
+.EXAMPLE 
+    Get-RESVersion
+#>
+Function Get-RESVersion 
 {
     [CmdletBinding()] 
     param()

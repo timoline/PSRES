@@ -1,5 +1,5 @@
 ﻿<#
-.Synopsis
+.SYNOPSIS
    Shows Applications and properties from RES Workspace Manager / Powerfuse
 .DESCRIPTION
    Shows Applications and properties from RES Workspace Manager / Powerfuse

@@ -1,5 +1,5 @@
 ﻿<#
-.Synopsis
+.SYNOPSIS
    Forcing a local cache update for Workspace Manager / PowerFuse.
 .DESCRIPTION
    Forcing a local cache update for Workspace Manager / PowerFuse.

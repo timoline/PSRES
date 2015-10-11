@@ -1,12 +1,11 @@
 ﻿<#
-
-###################
-
-
-#####################
-
-.EXAMPLE 
-    Get-RESMappings 
+.SYNOPSIS
+   Shows mappings and properties from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows mappings and properties from RES Workspace Manager / Powerfuse
+.EXAMPLE  
+    Get-RESMappings -Device "H:"
+    Shows mapping and properties with device H:
 #>
 function Get-RESMappings 
 {

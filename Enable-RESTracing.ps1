@@ -6,7 +6,7 @@
 #>
 
 <#
-.Synopsis
+.SYNOPSIS
    Enable RES Tracing for RES Powerfuse / Workspace Manager
 .DESCRIPTION
    Enable RES Tracing for RES Powerfuse / Workspace Manager, only on local computer

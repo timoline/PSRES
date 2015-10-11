@@ -1,4 +1,12 @@
-﻿Function Get-RESRegistryPath 
+﻿<#
+.SYNOPSIS
+   Shows the registry path from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the registry path from RES Workspace Manager / Powerfuse
+.EXAMPLE 
+    Get-RESRegistryPath
+#>
+Function Get-RESRegistryPath 
 {	
     [CmdletBinding()] 
     param()

@@ -1,12 +1,10 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the registry settings from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the registry settings  from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESRegs 
+    Get-RESRegs
 #>
 function Get-RESRegs 
 {

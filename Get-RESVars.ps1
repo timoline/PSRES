@@ -1,12 +1,10 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the variables from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the variables from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESVars 
+    Get-RESVars
 #>
 function Get-RESVars 
 {

@@ -1,5 +1,8 @@
 ﻿<#
-
+.SYNOPSIS
+   Shows printers and properties from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows printers and properties from RES Workspace Manager / Powerfuse
 .EXAMPLE 
     Get-RESPrinters -Location "*duiven*" -disabled | select printer, location
 #>

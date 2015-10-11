@@ -1,4 +1,12 @@
-﻿Function Get-RESLocalCachePath 
+﻿<#
+.SYNOPSIS
+   Shows the local cache path from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the local cache path  from RES Workspace Manager / Powerfuse
+.EXAMPLE 
+    Get-RESLocalCachePath
+#>
+Function Get-RESLocalCachePath 
 {	
     [CmdletBinding()] 
     param()

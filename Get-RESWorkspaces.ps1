@@ -1,12 +1,10 @@
 ﻿<#
-
-###################
-
-
-#####################
-
+.SYNOPSIS
+   Shows the workspaces from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the workspaces from RES Workspace Manager / Powerfuse
 .EXAMPLE 
-    Get-RESWorkspaces 
+    Get-RESWorkspaces
 #>
 function Get-RESWorkspaces 
 {

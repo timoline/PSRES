@@ -1,5 +1,5 @@
 ﻿<#
-.Synopsis
+.SYNOPSIS
    Disable RES Tracing for RES Powerfuse / Workspace Manager
 .DESCRIPTION
    Disable RES Tracing for RES Powerfuse / Workspace Manager, only on local computer

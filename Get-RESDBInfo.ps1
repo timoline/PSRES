@@ -1,4 +1,12 @@
-﻿Function Get-RESDBInfo 
+﻿<#
+.SYNOPSIS
+   Shows the database info from RES Workspace Manager / Powerfuse
+.DESCRIPTION
+   Shows the database info from RES Workspace Manager / Powerfuse
+.EXAMPLE 
+    Get-RESDBInfo
+#>
+Function Get-RESDBInfo 
 {
     [CmdletBinding()] 
     param()
