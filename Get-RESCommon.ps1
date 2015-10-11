@@ -27,50 +27,6 @@
     }#process 
 }
 
-Filter Get-RESWorkspaceName
-{
-    [CmdletBinding()] 
-    param ( 
-        # The guid 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [alias('Workspace')]  
-        [string] 
-        $Guid       
-    )
-    #$Guid = "{E536D09E-3DA0-464A-84A5-F520C43C1429}"
-    $Value = Get-RESWorkspaces -Guid $Guid     
-    return $Value.name.node."#text" 
-}
-
-Filter Get-RESPowerzoneName
-{
-    [CmdletBinding()] 
-    param ( 
-        # The guid 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [alias('Powerzone')] 
-        [string] 
-        $Guid       
-    )
-    #$Guid = "{EF0E53B1-B968-48EF-8089-C3ABB154E34F}"
-    $Value = Get-RESPowerzones -Guid $Guid 
-    return $Value.name.node."#text" 
-}
-
-Filter Get-RESServerGroupServers
-{
-    [CmdletBinding()] 
-    param ( 
-        # The ServerGroup 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [alias('Name','Objectdesc')]  
-        [string] 
-        $ServerGroup       
-    )
-    $Value = Get-RESServerGroups -ServerGroup $ServerGroup | select -ExpandProperty servers
-    return $Value.server.node."#text" 
-}
-
 function Get-RESMenuPath
 {
     [CmdletBinding()] 
@@ -122,4 +78,48 @@ function Get-RESMenuPath
         return $TblMenuPath[[string]$AppID] -replace '\\App$',''             
     }
     
+}
+
+function Convert-RESGuidToWorkspace
+{
+    [CmdletBinding()] 
+    param ( 
+        # The guid 
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [alias('Workspace')]  
+        [string] 
+        $Guid       
+    )
+    #$Guid = "{E536D09E-3DA0-464A-84A5-F520C43C1429}"
+    $Value = Get-RESWorkspaces -Guid $Guid     
+    return $Value.name.node."#text" 
+}
+
+function Convert-RESGuidToPowerzone
+{
+    [CmdletBinding()] 
+    param ( 
+        # The guid 
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [alias('Powerzone')] 
+        [string] 
+        $Guid       
+    )
+    #$Guid = "{EF0E53B1-B968-48EF-8089-C3ABB154E34F}"
+    $Value = Get-RESPowerzones -Guid $Guid 
+    return $Value.name.node."#text" 
+}
+
+Filter Get-RESServerGroupServers
+{
+    [CmdletBinding()] 
+    param ( 
+        # The ServerGroup 
+        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
+        [alias('Name','Objectdesc')]  
+        [string] 
+        $ServerGroup       
+    )
+    $Value = Get-RESServerGroups -ServerGroup $ServerGroup | select -ExpandProperty servers
+    return $Value.server.node."#text" 
 }
