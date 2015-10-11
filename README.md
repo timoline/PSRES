@@ -4,28 +4,34 @@
 RES powershell module
 
 * Add-RESServerToServerGroup
+* Convert-RESGuidToPowerzone
+* Convert-RESGuidToWorkspace
 * Disable-RESTracing
 * Enable-RESTracing
+* Get-RESAppMenus
 * Get-RESApps
 * Get-RESDBInfo
+* Get-RESFolderSync
 * Get-RESGlobalAuthorised
+* Get-RESGlobalAuthorisedConnections
 * Get-RESInstallDir
 * Get-RESLocalCachePath
 * Get-RESMappings
+* Get-RESMenuPath
+* Get-RESObjectsPath
 * Get-RESPowerzones
-* Get-RESPowerzoneName
 * Get-RESPrinters
 * Get-RESRegistryPath
 * Get-RESRegs
 * Get-RESServerGroups
-* Get-RESServerGroupServers
 * Get-RESSubst
+* Get-RESTasks
 * Get-RESVars
 * Get-RESVersion
 * Get-RESWorkspaces
-* Get-RESWorkspaceName
 * Remove-RESServerFromServerGroup
 * Update-RESLocalCache
+* Get-RESServerGroupServers
 
 !! Tested on
 * RES Powerfuse 2008
