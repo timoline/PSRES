@@ -30,12 +30,12 @@ function Update-RESLocalCache
         Write-Verbose "Deleting key."
 
         #stop, wait and start the service
-        (Get-Service -ComputerName $Server | where {$_.name -eq "RES"}).stop()
-        (Get-Service -ComputerName $Server | where {$_.name -eq "RES"}).WaitForStatus("Stopped")
+        (Get-Service -ComputerName $Server | Where-Object {$_.name -eq "RES"}).stop()
+        (Get-Service -ComputerName $Server | Where-Object {$_.name -eq "RES"}).WaitForStatus("Stopped")
         Write-Verbose 'RES Service Stopped.'        
         
-        (Get-Service -ComputerName $Server | where {$_.name -eq "RES"}).start()
-        (Get-Service -ComputerName $Server | where {$_.name -eq "RES"}).WaitForStatus("Running")
+        (Get-Service -ComputerName $Server | Where-Object {$_.name -eq "RES"}).start()
+        (Get-Service -ComputerName $Server | Where-Object {$_.name -eq "RES"}).WaitForStatus("Running")
         Write-Verbose 'RES Service Started.'
     
         Write-Verbose 'Local cache update for RES Powerfuse / Workspace Manager is succefully forced.'
