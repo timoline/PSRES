@@ -45,10 +45,10 @@ Function Disable-RESTracing
     }
 
     #stop, wait and start the service
-    (Get-Service | where {$_.name -eq "RES"}).stop()
-    (Get-Service | where {$_.name -eq "RES"}).WaitForStatus("Stopped")
-    (Get-Service | where {$_.name -eq "RES"}).start()
-    (Get-Service | where {$_.name -eq "RES"}).WaitForStatus("Running")
+    (Get-Service | Where-Object {$_.name -eq "RES"}).stop()
+    (Get-Service | Where-Object {$_.name -eq "RES"}).WaitForStatus("Stopped")
+    (Get-Service | Where-Object {$_.name -eq "RES"}).start()
+    (Get-Service | Where-Object {$_.name -eq "RES"}).WaitForStatus("Running")
 
     Write-Verbose 'RESTracing is disabled.'
 } #end Function
