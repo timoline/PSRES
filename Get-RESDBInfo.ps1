@@ -15,7 +15,7 @@ Function Get-RESDBInfo
     $KeyPath = Get-RESRegistryPath
 
     $DBSrvPrt = (Get-ItemProperty $KeyPath).DBServer 
-    if($DBSrvPrt)
+    if ($DBSrvPrt)
     {
         $DBSrvPrt2 = $DBSrvPrt.split(",")  
         $DBServer = $DBSrvPrt2[0]   
@@ -31,15 +31,15 @@ Function Get-RESDBInfo
     $DBEncryption = (Get-ItemProperty $KeyPath).DBEncryption
 
     $Prop = @{
-        DBServer = $DBServer;
-        DBName = $DBName;
-        DBPort = $DBPort;
-        DBUser = $DBUser;
-        DBPassword = $DBPassword;
+        DBServer            = $DBServer
+        DBName              = $DBName
+        DBPort              = $DBPort
+        DBUser              = $DBUser
+        DBPassword          = $DBPassword
         DBPasswordConverted = $DBPasswordConverted  
-        DBPasswordEx = $DBPasswordEx;                              
-        DBType = $DBType;
-        DBEncryption = $DBEncryption;
+        DBPasswordEx        = $DBPasswordEx
+        DBType              = $DBType
+        DBEncryption        = $DBEncryption
     }
     New-Object PSObject -property $Prop     
 }
