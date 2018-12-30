@@ -38,6 +38,7 @@ Function Get-RESDBInfo
         DBPassword          = $DBPassword
         DBPasswordConverted = $DBPasswordConverted  
         DBPasswordEx        = $DBPasswordEx
+        DBState             = $DBState
         DBType              = $DBType
         DBEncryption        = $DBEncryption
     }
