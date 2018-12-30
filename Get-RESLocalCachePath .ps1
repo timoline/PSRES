@@ -20,7 +20,7 @@ Function Get-RESLocalCachePath
     }
     Else 
     {
-        $RESInstallDir =  Get-RESInstallDir
+        $RESInstallDir = Get-RESInstallDir
         $LocalCachePath = Join-Path $RESInstallDir "\data\DBcache"
         return $LocalCachePath 
     }   

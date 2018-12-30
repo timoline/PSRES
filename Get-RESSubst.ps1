@@ -15,7 +15,7 @@ function Get-RESSubst
         [string] 
         $VirtualDrive = "*",
 
-       # subst disabled 
+        # subst disabled 
         [Switch]
         $Disabled        
     
@@ -36,7 +36,7 @@ function Get-RESSubst
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -64,26 +64,26 @@ function Get-RESSubst
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
                 $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
-                    object = $object
-                    domain = $domain
+                    type        = $type
+                    object      = $object
+                    domain      = $domain
                     inheritance = $inheritance
                 }
 
                 $Prop = @{
-                    virtualdrive = $virtualdrive
-                    path = $path
-                    description = $description
-                    state = $state
-                    hidedrive = $hidedrive
-                    accesscontrol = $accesscontrol
+                    virtualdrive     = $virtualdrive
+                    path             = $path
+                    description      = $description
+                    state            = $state
+                    hidedrive        = $hidedrive
+                    accesscontrol    = $accesscontrol
                     workspacecontrol = $workspacecontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    order = $order                
+                    guid             = $guid   
+                    updateguid       = $updateguid
+                    parentguid       = $parentguid                 
+                    enabled          = $enabled
+                    objectdesc       = $objectdesc
+                    order            = $order                
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -101,9 +101,9 @@ function Get-RESSubst
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.virtualdrive -like $virtualdrive} |               
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.virtualdrive -like $virtualdrive} |               
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

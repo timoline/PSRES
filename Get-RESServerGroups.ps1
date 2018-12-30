@@ -12,11 +12,11 @@ function Get-RESServerGroups
     param ( 
         # The Name 
         [Parameter()]
-        [alias('Name','Objectdesc')]        
+        [alias('Name', 'Objectdesc')]        
         [string] 
         $ServerGroup = "*",
 
-       # Var disabled 
+        # Var disabled 
         [Switch]
         $Disabled        
     
@@ -40,7 +40,7 @@ function Get-RESServerGroups
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -57,10 +57,10 @@ function Get-RESServerGroups
                 }
 
                 $Prop = @{
-                    servers = $servers
-                    guid = $guid   
+                    servers    = $servers
+                    guid       = $guid   
                     updateguid = $updateguid             
-                    enabled = $enabled
+                    enabled    = $enabled
                     objectdesc = $objectdesc              
                 }
 
@@ -79,9 +79,9 @@ function Get-RESServerGroups
         if ($Node)
         {
             $Node |
-            Get-RESData |
-            Where-Object {$_.objectdesc -like $ServerGroup} |               
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}             
+                Get-RESData |
+                Where-Object {$_.objectdesc -like $ServerGroup} |               
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}             
         }            
     }
 }

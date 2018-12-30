@@ -15,7 +15,7 @@ function Get-RESTasks
         [string] 
         $Description = "*",
 
-       # reg disabled 
+        # reg disabled 
         [Switch]
         $Disabled        
     
@@ -36,7 +36,7 @@ function Get-RESTasks
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -68,31 +68,31 @@ function Get-RESTasks
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
                 $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
-                    object = $object
-                    domain = $domain
+                    type        = $type
+                    object      = $object
+                    domain      = $domain
                     inheritance = $inheritance
                 }
 
                 $Prop = @{
-                    description = $description       
-                    command = $command
+                    description        = $description       
+                    command            = $command
                     waitforapplication = $waitforapplication
-                    runonce = $runonce             
-                    script = $script
-                    scriptext = $scriptext
-                    timeoutperiod = $timeoutperiod
-                    hideapplication = $hideapplication
-                    state = $state
+                    runonce            = $runonce             
+                    script             = $script
+                    scriptext          = $scriptext
+                    timeoutperiod      = $timeoutperiod
+                    hideapplication    = $hideapplication
+                    state              = $state
 
-                    accesscontrol = $accesscontrol
-                    workspacecontrol = $workspacecontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    order = $order                
+                    accesscontrol      = $accesscontrol
+                    workspacecontrol   = $workspacecontrol
+                    guid               = $guid   
+                    updateguid         = $updateguid
+                    parentguid         = $parentguid                 
+                    enabled            = $enabled
+                    objectdesc         = $objectdesc
+                    order              = $order                
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -110,9 +110,9 @@ function Get-RESTasks
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Description -like $Description} |               
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Description -like $Description} |               
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

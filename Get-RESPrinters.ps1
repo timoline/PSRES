@@ -21,7 +21,7 @@ function Get-RESPrinters
         [string] 
         $Location = "*",          
         
-       # Printer disabled 
+        # Printer disabled 
         [Switch]
         $Disabled
     
@@ -42,7 +42,7 @@ function Get-RESPrinters
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -68,27 +68,27 @@ function Get-RESPrinters
                 $object = select-xml -xml $Node -XPath './/accesscontrol/access/object'
 
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
+                    type   = $type
                     object = $object
                 }
 
                 $Prop = @{
-                    Printer = $printer
-                    Backupprinter = $Backupprinter
-                    Default = $default
-                    Fastconnect = $fastconnect
-                    Failover = $failover
+                    Printer           = $printer
+                    Backupprinter     = $Backupprinter
+                    Default           = $default
+                    Fastconnect       = $fastconnect
+                    Failover          = $failover
                     Printerpreference = $printerpreference
-                    Waitfortask = $waitfortask
-                    Description = $description               
-                    Driver = $driver
-                    Comment = $comment
-                    Location = $location
-                    State = $state
-                    Enabled = $enabled
-                    Objectdesc = $objectdesc
-                    Order = $order
-                    accesscontrol = $accesscontrol
+                    Waitfortask       = $waitfortask
+                    Description       = $description               
+                    Driver            = $driver
+                    Comment           = $comment
+                    Location          = $location
+                    State             = $state
+                    Enabled           = $enabled
+                    Objectdesc        = $objectdesc
+                    Order             = $order
+                    accesscontrol     = $accesscontrol
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -110,10 +110,10 @@ function Get-RESPrinters
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Printer -like $Printer} |      
-            Where-Object {$_.Location -like $Location} |              
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Printer -like $Printer} |      
+                Where-Object {$_.Location -like $Location} |              
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

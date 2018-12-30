@@ -15,7 +15,7 @@ function Get-RESRegs
         [string] 
         $Name = "*",
 
-       # reg disabled 
+        # reg disabled 
         [Switch]
         $Disabled        
     
@@ -36,7 +36,7 @@ function Get-RESRegs
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -66,27 +66,27 @@ function Get-RESRegs
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
                 $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
-                    object = $object
-                    domain = $domain
+                    type        = $type
+                    object      = $object
+                    domain      = $domain
                     inheritance = $inheritance
                 }
 
                 $Prop = @{
-                    name = $name
-                    type = $type
-                    runonce = $runonce
-                    description = $description                    
-                    policysettings = $policysettings
-                    admfile = $admfile
-                    accesscontrol = $accesscontrol
+                    name             = $name
+                    type             = $type
+                    runonce          = $runonce
+                    description      = $description                    
+                    policysettings   = $policysettings
+                    admfile          = $admfile
+                    accesscontrol    = $accesscontrol
                     workspacecontrol = $workspacecontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    order = $order                
+                    guid             = $guid   
+                    updateguid       = $updateguid
+                    parentguid       = $parentguid                 
+                    enabled          = $enabled
+                    objectdesc       = $objectdesc
+                    order            = $order                
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -104,9 +104,9 @@ function Get-RESRegs
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Name -like $Name} |               
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Name -like $Name} |               
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

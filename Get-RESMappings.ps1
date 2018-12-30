@@ -22,7 +22,7 @@ function Get-RESMappings
         [string] 
         $Description = "*",
         
-       # disabled 
+        # disabled 
         [Switch]
         $Disabled            
     )
@@ -42,7 +42,7 @@ function Get-RESMappings
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -77,31 +77,32 @@ function Get-RESMappings
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
                 $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
-                    object = $object
-                    domain = $domain
+                    type        = $type
+                    object      = $object
+                    domain      = $domain
                     inheritance = $inheritance
                 }
 
                 $Prop = @{
-                    device = $device
-                    description = $description
-                    sharename = $sharename
-                    username = $username
-                    password = $password
-                    password_long = $password_long   
-                    prompt = $prompt
-                    hidedrive = $hidedrive                 
-                    action = $action
-                    state = $state
-                    accesscontrol = $accesscontrol   
+                    device           = $device
+                    description      = $description
+                    sharename        = $sharename
+                    username         = $username
+                    password         = $password
+                    password_long    = $password_long   
+                    prompt           = $prompt
+                    hidedrive        = $hidedrive 
+                    fastconnect      = $fastconnect
+                    action           = $action
+                    state            = $state
+                    accesscontrol    = $accesscontrol   
                     workspacecontrol = $workspacecontrol  
-                    guid = $guid  
-                    updateguid = $updateguid
-                    parentguid = $parentguid  
-                    enabled = $enabled
-                    objectdesc = $objectdesc   
-                    order = $order              
+                    guid             = $guid  
+                    updateguid       = $updateguid
+                    parentguid       = $parentguid  
+                    enabled          = $enabled
+                    objectdesc       = $objectdesc   
+                    order            = $order              
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -119,10 +120,10 @@ function Get-RESMappings
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Device -like $Device} |
-            Where-Object {$_.description -like $description} |
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Device -like $Device} |
+                Where-Object {$_.description -like $description} |
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

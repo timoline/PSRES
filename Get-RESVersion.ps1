@@ -21,11 +21,11 @@ Function Get-RESVersion
     $SubRevision = (Get-ItemProperty $KeyPath).SubRevision 
 
     $Prop = @{
-        Version = $Version
+        Version      = $Version
         UpgradeLevel = $UpgradeLevel
-        StartLevel = $StartLevel
+        StartLevel   = $StartLevel
         StartVersion = $StartVersion
-        SubRevision = $SubRevision
+        SubRevision  = $SubRevision
     }
     New-Object PSObject -property $Prop     
 }

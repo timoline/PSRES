@@ -11,7 +11,7 @@ Function Get-RESRegistryPath
     [CmdletBinding()] 
     param()
 
-	if ((Get-WmiObject Win32_OperatingSystem).OSArchitecture -like "64*")
+    if ((Get-WmiObject Win32_OperatingSystem).OSArchitecture -like "64*")
     {
         Write-Verbose "OSArchitecture is 64-bit"
        

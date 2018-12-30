@@ -20,7 +20,7 @@ function Get-RESWorkspaces
         [string] 
         $Guid = "*", 
 
-       # Var disabled 
+        # Var disabled 
         [Switch]
         $Disabled        
     
@@ -41,7 +41,7 @@ function Get-RESWorkspaces
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -63,31 +63,31 @@ function Get-RESWorkspaces
                 $computerguid = select-xml -xml $Node -XPath './/computercontrol/item/guid'
 
                 $computercontrol = New-Object PSObject -property @{
-                    type = $computertype
+                    type  = $computertype
                     agent = $computeragent
-                    guid = $computerguid
+                    guid  = $computerguid
                 }
 
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
                 $object = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
+                    type   = $type
                     object = $object
                 }
                 
                 $Prop = @{
-                    required = $required
-                    name = $name
-                    description = $description
-                    selectablebyuser = $selectablebyuser
+                    required            = $required
+                    name                = $name
+                    description         = $description
+                    selectablebyuser    = $selectablebyuser
                     includeallcomputers = $includeallcomputers                                         
-                    accesscontrol = $accesscontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc  
-                    computercontrol = $computercontrol            
+                    accesscontrol       = $accesscontrol
+                    guid                = $guid   
+                    updateguid          = $updateguid
+                    parentguid          = $parentguid                 
+                    enabled             = $enabled
+                    objectdesc          = $objectdesc  
+                    computercontrol     = $computercontrol            
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -105,10 +105,10 @@ function Get-RESWorkspaces
         if ($Node)
         {
             $Node |
-            Get-RESData |
-            Where-Object {$_.Name -like $Name} |  
-            Where-Object {$_.Guid -like $Guid} |                            
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}             
+                Get-RESData |
+                Where-Object {$_.Name -like $Name} |  
+                Where-Object {$_.Guid -like $Guid} |                            
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}             
         }            
     }
 }

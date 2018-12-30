@@ -35,7 +35,7 @@ function Get-RESVars
         [string] 
         $Guid = "*", 
 
-       # Var disabled 
+        # Var disabled 
         [Switch]
         $Disabled        
     
@@ -56,7 +56,7 @@ function Get-RESVars
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -76,22 +76,22 @@ function Get-RESVars
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
                 $object = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
+                    type   = $type
                     object = $object
                 }
 
                 $Prop = @{
-                    description = $description
-                    name = $name
-                    value = $value
-                    state = $state
+                    description   = $description
+                    name          = $name
+                    value         = $value
+                    state         = $state
                     accesscontrol = $accesscontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    order = $order                
+                    guid          = $guid   
+                    updateguid    = $updateguid
+                    parentguid    = $parentguid                 
+                    enabled       = $enabled
+                    objectdesc    = $objectdesc
+                    order         = $order                
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -109,13 +109,13 @@ function Get-RESVars
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Name -like $Name} |        
-            Where-Object {$_.value -like $Value} |    
-            Where-Object {$_.objectdesc -like $objectdesc} |  
-            Where-Object {$_.description -like $description} |  
-            Where-Object {$_.Guid -like $Guid} |                       
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Name -like $Name} |        
+                Where-Object {$_.value -like $Value} |    
+                Where-Object {$_.objectdesc -like $objectdesc} |  
+                Where-Object {$_.description -like $description} |  
+                Where-Object {$_.Guid -like $Guid} |                       
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }
