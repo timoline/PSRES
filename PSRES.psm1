@@ -1,25 +1,25 @@
 function Test-ElevatedShell
 {
-	$user = [Security.Principal.WindowsIdentity]::GetCurrent()
-	(New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
+    $user = [Security.Principal.WindowsIdentity]::GetCurrent()
+    (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
 }
 
 
-if(!(Test-ElevatedShell))
+if (!(Test-ElevatedShell))
 {
 
-$warning=@"
+    $warning = @"
 	To run commands exposed by this module on Windows Vista, Windows Server 2008, and later versions of Windows,
 	you must start an elevated Windows PowerShell console. You must have Administrator privligies on the remote
 	computers and the remote registry service has to be running.
 "@
 
-	Write-Warning $warning	
-	Exit
+    Write-Warning $warning	
+    Exit
 }
 
 # dot-source all function files
-Get-ChildItem -Path $PSScriptRoot\*.ps1 | Foreach-Object{ . $_.FullName }
+Get-ChildItem -Path $PSScriptRoot\*.ps1 | Foreach-Object { . $_.FullName }
 #. $psScriptRoot\RES_Apps.ps1
 #. $psScriptRoot\RES_Tracing.ps1
 #. $psScriptRoot\RES_LocalCache.ps1
