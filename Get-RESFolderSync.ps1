@@ -16,7 +16,7 @@ function Get-RESFolderSync
         [string] 
         $Description = "*",
 
-       # reg disabled 
+        # reg disabled 
         [Switch]
         $Disabled        
     
@@ -37,7 +37,7 @@ function Get-RESFolderSync
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -77,39 +77,39 @@ function Get-RESFolderSync
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
                 $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
-                    object = $object
-                    domain = $domain
+                    type        = $type
+                    object      = $object
+                    domain      = $domain
                     inheritance = $inheritance
                 }
 
                 $Prop = @{
-                    description = $description       
-                    localfolder = $localfolder
-                    remotefolder = $remotefolder
-                    direction = $direction             
+                    description           = $description       
+                    localfolder           = $localfolder
+                    remotefolder          = $remotefolder
+                    direction             = $direction             
                     runatapplicationstart = $runatapplicationstart
-                    runatapplicationend = $runatapplicationend
-                    runatlogon = $runatlogon
-                    runatrefresh = $runatrefresh
-                    runatreconnect = $runatreconnect
-                    runatlogoff = $runatlogoff
-                    runatinterval = $runatinterval
-                    waitforsync = $waitforsync             
-                    excludereadonly = $excludereadonly
-                    excludehiddenfiles = $excludehiddenfiles
-                    excludesystemfiles = $excludesystemfiles
-                    saveinrecyclebin = $saveinrecyclebin
-                    state = $state
+                    runatapplicationend   = $runatapplicationend
+                    runatlogon            = $runatlogon
+                    runatrefresh          = $runatrefresh
+                    runatreconnect        = $runatreconnect
+                    runatlogoff           = $runatlogoff
+                    runatinterval         = $runatinterval
+                    waitforsync           = $waitforsync             
+                    excludereadonly       = $excludereadonly
+                    excludehiddenfiles    = $excludehiddenfiles
+                    excludesystemfiles    = $excludesystemfiles
+                    saveinrecyclebin      = $saveinrecyclebin
+                    state                 = $state
 
-                    accesscontrol = $accesscontrol
-                    workspacecontrol = $workspacecontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    order = $order                
+                    accesscontrol         = $accesscontrol
+                    workspacecontrol      = $workspacecontrol
+                    guid                  = $guid   
+                    updateguid            = $updateguid
+                    parentguid            = $parentguid                 
+                    enabled               = $enabled
+                    objectdesc            = $objectdesc
+                    order                 = $order                
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -127,9 +127,9 @@ function Get-RESFolderSync
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Description -like $Description} |               
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Description -like $Description} |               
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

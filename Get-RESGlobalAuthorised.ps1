@@ -19,11 +19,11 @@ function Get-RESGlobalAuthorised
         # The Process [rwx]
         [Parameter()]
         [alias('Permission')]     
-        [ValidateSet("rxw","rx","r")]    
+        [ValidateSet("rxw", "rx", "r")]    
         [string] 
         $Operation = "*",
         
-       # Authorisation disabled 
+        # Authorisation disabled 
         [Switch]
         $Disabled        
     
@@ -44,7 +44,7 @@ function Get-RESGlobalAuthorised
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -64,23 +64,23 @@ function Get-RESGlobalAuthorised
                 $type = select-xml -xml $Node -XPath './/accesscontrol/access/type'
                 $access = select-xml -xml $Node -XPath './/accesscontrol/access/object'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
+                    type   = $type
                     access = $access
                 }
 
                 $Prop = @{
 
                     authorizedfile = $authorizedfile
-                    description = $description                    
-                    process = $process
-                    operation = $operation
-                    learningmode = $learningmode
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    accesscontrol = $accesscontrol
+                    description    = $description                    
+                    process        = $process
+                    operation      = $operation
+                    learningmode   = $learningmode
+                    guid           = $guid   
+                    updateguid     = $updateguid
+                    parentguid     = $parentguid                 
+                    enabled        = $enabled
+                    objectdesc     = $objectdesc
+                    accesscontrol  = $accesscontrol
 
                 }
 
@@ -103,10 +103,10 @@ function Get-RESGlobalAuthorised
         if ($node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Process -like $Process} |               
-            Where-Object {$_.Operation -like $Operation} |                
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Process -like $Process} |               
+                Where-Object {$_.Operation -like $Operation} |                
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

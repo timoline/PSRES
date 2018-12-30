@@ -8,7 +8,7 @@
 #>
 Function Disable-RESTracing 
 {
-[CmdletBinding()] 
+    [CmdletBinding()] 
     param 
     (
 

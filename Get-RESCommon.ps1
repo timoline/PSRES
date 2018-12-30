@@ -3,13 +3,13 @@
     [CmdletBinding()] 
     param ( 
         # The Parameter of the switch
-        [Parameter(Mandatory=$true, Position=0)]
-        [ValidateSet("True","False")] 
+        [Parameter(Mandatory = $true, Position = 0)]
+        [ValidateSet("True", "False")] 
         [string] 
         $Paramsw,
         
         # The Value of the switch
-        [Parameter(Mandatory=$true, Position=1)]
+        [Parameter(Mandatory = $true, Position = 1)]
         [string] 
         $Value 
     
@@ -33,7 +33,7 @@ function Get-RESMenuPath
     param ( 
 
         # The AppID
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
         [string] 
         $AppID       
     )
@@ -75,7 +75,7 @@ function Get-RESMenuPath
     }
     end 
     {                         
-        return $TblMenuPath[[string]$AppID] -replace '\\App$',''             
+        return $TblMenuPath[[string]$AppID] -replace '\\App$', ''             
     }
     
 }
@@ -85,15 +85,18 @@ function Convert-RESGuidToWorkspace
     [CmdletBinding()] 
     param ( 
         # The guid 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [ValidateScript({
-            try {
-                [System.Guid]::Parse($_) | Out-Null
-                $true
-            } catch {
-                $false
-            }
-        })]
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        [ValidateScript( {
+                try
+                {
+                    [System.Guid]::Parse($_) | Out-Null
+                    $true
+                }
+                catch
+                {
+                    $false
+                }
+            })]
         [alias('Workspace')]  
         [string] 
         $Guid       
@@ -108,15 +111,18 @@ function Convert-RESGuidToPowerzone
     [CmdletBinding()] 
     param ( 
         # The guid 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [ValidateScript({
-            try {
-                [System.Guid]::Parse($_) | Out-Null
-                $true
-            } catch {
-                $false
-            }
-        })]
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        [ValidateScript( {
+                try
+                {
+                    [System.Guid]::Parse($_) | Out-Null
+                    $true
+                }
+                catch
+                {
+                    $false
+                }
+            })]
         [alias('Powerzone')] 
         [string] 
         $Guid       
@@ -131,8 +137,8 @@ Filter Get-RESServerGroupServers
     [CmdletBinding()] 
     param ( 
         # The ServerGroup 
-        [Parameter(Mandatory=$true,ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [alias('Name','Objectdesc')]  
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        [alias('Name', 'Objectdesc')]  
         [string] 
         $ServerGroup       
     )

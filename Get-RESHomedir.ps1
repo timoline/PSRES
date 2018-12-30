@@ -15,7 +15,7 @@ function Get-RESHomedir
         [string] 
         $Description = "*",
 
-       # reg disabled 
+        # reg disabled 
         [Switch]
         $Disabled        
     
@@ -36,7 +36,7 @@ function Get-RESHomedir
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -68,29 +68,29 @@ function Get-RESHomedir
                 $domain = select-xml -xml $Node -XPath './/accesscontrol/access/domain'
                 $inheritance = select-xml -xml $Node -XPath './/accesscontrol/access/inheritance'
                 $accesscontrol = New-Object PSObject -property @{
-                    type = $type
-                    object = $object
-                    domain = $domain
+                    type        = $type
+                    object      = $object
+                    domain      = $domain
                     inheritance = $inheritance
                 }
 
                 $Prop = @{
-                    description = $description       
-                    object = $object
-                    objectorg = $objectorg
-                    alias = $alias             
-                    includesubdirs = $includesubdirs
-                    action = $action
-                    state = $state
+                    description      = $description       
+                    object           = $object
+                    objectorg        = $objectorg
+                    alias            = $alias             
+                    includesubdirs   = $includesubdirs
+                    action           = $action
+                    state            = $state
 
-                    accesscontrol = $accesscontrol
+                    accesscontrol    = $accesscontrol
                     workspacecontrol = $workspacecontrol
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc
-                    order = $order                
+                    guid             = $guid   
+                    updateguid       = $updateguid
+                    parentguid       = $parentguid                 
+                    enabled          = $enabled
+                    objectdesc       = $objectdesc
+                    order            = $order                
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -108,9 +108,9 @@ function Get-RESHomedir
         if ($Node)
         {
             $Node |
-            Get-RESData | 
-            Where-Object {$_.Description -like $Description} |               
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
+                Get-RESData | 
+                Where-Object {$_.Description -like $Description} |               
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")} 
         }            
     }
 }

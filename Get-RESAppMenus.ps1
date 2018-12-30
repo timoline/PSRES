@@ -32,7 +32,7 @@ function Get-RESAppMenus
         [string] 
         $Guid = "*", 
 
-       # Var disabled 
+        # Var disabled 
         [Switch]
         $Disabled        
     
@@ -53,7 +53,7 @@ function Get-RESAppMenus
             [CmdletBinding()]
             param 
             ( 
-                [parameter(Mandatory=$true,ValueFromPipeline=$true)] 
+                [parameter(Mandatory = $true, ValueFromPipeline = $true)] 
                 $Node 
             )
             process 
@@ -68,13 +68,13 @@ function Get-RESAppMenus
                 $objectdesc = select-xml -xml $Node -XPath './/objectdesc' 
 
                 $Prop = @{
-                    title = $title
+                    title       = $title
                     description = $description
-                    guid = $guid   
-                    updateguid = $updateguid
-                    parentguid = $parentguid                 
-                    enabled = $enabled
-                    objectdesc = $objectdesc              
+                    guid        = $guid   
+                    updateguid  = $updateguid
+                    parentguid  = $parentguid                 
+                    enabled     = $enabled
+                    objectdesc  = $objectdesc              
                 }
 
                 $Result = New-Object PSObject -property $Prop
@@ -87,17 +87,17 @@ function Get-RESAppMenus
 
     end 
     {
-        $Node =  Select-Xml -Path $Xml -XPath $XPath | Select-Object -ExpandProperty node
+        $Node = Select-Xml -Path $Xml -XPath $XPath | Select-Object -ExpandProperty node
 
         if ($Node)
         {
             $Node |
-            Get-RESData |
-            Where-Object {$_.title -like $title} | 
-            Where-Object {$_.objectdesc -like $objectdesc} |  
-            Where-Object {$_.description -like $description} |  
-            Where-Object {$_.Guid -like $Guid} |                            
-            Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}   
+                Get-RESData |
+                Where-Object {$_.title -like $title} | 
+                Where-Object {$_.objectdesc -like $objectdesc} |  
+                Where-Object {$_.description -like $description} |  
+                Where-Object {$_.Guid -like $Guid} |                            
+                Where-Object {$_.Enabled -match (Get-ParamSW $Disabled "no")}   
                
         }            
     }

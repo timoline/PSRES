@@ -22,7 +22,7 @@ Function Enable-RESTracing
     (
         [Parameter()]
         [String]
-        $Logfile="c:\RESTrace.log"
+        $Logfile = "c:\RESTrace.log"
     )
     Write-Verbose 'Enabling RESTracing'
 
@@ -41,7 +41,7 @@ Function Enable-RESTracing
 
     #Set the acl to allow users write:
     $acl = Get-Acl $Logfile
-    $permission = "Everyone","FullControl","Allow"
+    $permission = "Everyone", "FullControl", "Allow"
     $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule $permission
     $acl.SetAccessRule($accessRule)
     $acl | Set-Acl $Logfile
