@@ -1,9 +1,9 @@
 ---
 Module Name: PSRES
-Module Guid: {{ Update Module Guid }}
+Module Guid: 44232733-b480-4ec4-b56b-9d6f4ea2de9a
 Download Help Link: {{ Update Download Link }}
-Help Version: {{ Update Help Version }}
-Locale: {{ Update Locale }}
+Help Version: {{ Please enter version of help manually (X.X.X.X) format }}
+Locale: en-US
 ---
 
 # PSRES Module
@@ -12,95 +12,95 @@ Locale: {{ Update Locale }}
 
 ## PSRES Cmdlets
 ### [Add-RESServerToServerGroup](Add-RESServerToServerGroup.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Convert-RESGuidToPowerzone](Convert-RESGuidToPowerzone.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Convert-RESGuidToWorkspace](Convert-RESGuidToWorkspace.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Disable-RESTracing](Disable-RESTracing.md)
-Disable RES Tracing for RES Powerfuse / Workspace Manager
+{{ Fill in the Description }}
 
 ### [Enable-RESTracing](Enable-RESTracing.md)
-Enable RES Tracing for RES Powerfuse / Workspace Manager
+{{ Fill in the Description }}
 
 ### [Get-ParamSW](Get-ParamSW.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Get-RESAppMenus](Get-RESAppMenus.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
-### [Get-RESAppMenus](Get-RESAppMenus.md)
-{{ Fill in the Synopsis }}
+### [Get-RESApps](Get-RESApps.md)
+{{ Fill in the Description }}
 
 ### [Get-RESDBInfo](Get-RESDBInfo.md)
-Shows the database info from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESFolderSync](Get-RESFolderSync.md)
-Shows the FolderSync from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESGlobalAuthorised](Get-RESGlobalAuthorised.md)
-Shows authorised files from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESGlobalAuthorisedConnections](Get-RESGlobalAuthorisedConnections.md)
-Shows authorised connections from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESHomedir](Get-RESHomedir.md)
-Shows the Homedir folders from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESInstallDir](Get-RESInstallDir.md)
-Shows the install directory from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESLocalCachePath](Get-RESLocalCachePath.md)
-Shows the local cache path from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESMappings](Get-RESMappings.md)
-Shows mappings and properties from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESMenuPath](Get-RESMenuPath.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Get-RESObjectsPath](Get-RESObjectsPath.md)
-Shows the objects path from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESPowerzones](Get-RESPowerzones.md)
-Shows the powerzones from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESPrinters](Get-RESPrinters.md)
-Shows printers and properties from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESRegistryPath](Get-RESRegistryPath.md)
-Shows the registry path from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESRegs](Get-RESRegs.md)
-Shows the registry settings from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESServerGroups](Get-RESServerGroups.md)
-Shows the server groups from RES Workspace Manager / Powerfuse
-
-### [Get-RESServerGroupServers](Get-RESServerGroupServers.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Get-RESSubst](Get-RESSubst.md)
-Shows the substitutes from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESTasks](Get-RESTasks.md)
-Shows the tasks from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESVars](Get-RESVars.md)
-Shows the variables from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESVersion](Get-RESVersion.md)
-Shows the version of RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Get-RESWorkspaces](Get-RESWorkspaces.md)
-Shows the workspaces from RES Workspace Manager / Powerfuse
+{{ Fill in the Description }}
 
 ### [Remove-RESServerFromServerGroup](Remove-RESServerFromServerGroup.md)
-{{ Fill in the Synopsis }}
+{{ Fill in the Description }}
 
 ### [Update-RESLocalCache](Update-RESLocalCache.md)
-Forcing a local cache update for Workspace Manager / PowerFuse.
+{{ Fill in the Description }}
+
+### [Get-RESServerGroupServers](Get-RESServerGroupServers.md)
+{{ Fill in the Description }}
 
