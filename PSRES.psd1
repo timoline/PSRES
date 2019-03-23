@@ -2,14 +2,14 @@
     # Module manifest for module 'PSRES'
 
     # MODULE
-    ModuleToProcess        = 'PSRES.psm1'    # Script module or binary module file associated with this manifest
+    RootModule        = 'PSRES.psm1'    # Script module or binary module file associated with this manifest
     ModuleVersion          = '2.0'
     GUID                   = '44232733-b480-4ec4-b56b-9d6f4ea2de9a'
     Description            = 'Defines common RES functions'
 
     # AUTHOR
     Author                 = 'M.Timmers'
-    CompanyName            = 'Borg'
+    CompanyName            = 'Timrz'
     Copyright              = 'Copyright 2014. All rights reserved.'
 
     # CONTENTS
