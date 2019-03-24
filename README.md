@@ -1,8 +1,8 @@
 ﻿PSRES
 ===
-
 RES powershell module
 
+## Cmdlets
 * Add-RESServerToServerGroup
 * Convert-RESGuidToPowerzone
 * Convert-RESGuidToWorkspace
@@ -33,8 +33,9 @@ RES powershell module
 * Update-RESLocalCache
 * Get-RESServerGroupServers
 
-!! Tested on
+## Compatibility
 * RES Powerfuse 2008
 * RES Workspace Manager 2011
 * RES Workspace Manager 2012
 * RES Workspace Manager 2014
+* RES Workspace Manager 2015
