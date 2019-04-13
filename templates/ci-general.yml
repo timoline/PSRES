@@ -1,6 +1,5 @@
 steps:
   # Setup
   - pwsh: |
-  #    Install-Module InvokeBuild -Scope CurrentUser -Force
       Install-Module PlatyPS -Scope CurrentUser -Force
   # Build
