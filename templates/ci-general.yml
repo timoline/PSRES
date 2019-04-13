@@ -1,5 +1,5 @@
 steps:
   # Setup
   - pwsh: |
-      Install-Module PlatyPS -Scope CurrentUser -Force
+      Install-Module PlatyPS -Scope CurrentUser -Force -verbose
   # Build
