@@ -11,5 +11,7 @@ jobs:
 - job: Windows
   pool:
     vmImage: 'VS2017-Win2016'
+  steps:
+  - template: templates/ci-general.yml
 
  
