@@ -1,0 +1,16 @@
+steps:
+  # Setup
+  - pwsh: |
+      Install-Module InvokeBuild -Scope CurrentUser -Force
+      Install-Module PlatyPS -Scope CurrentUser -Force
+  # Build
+  - pwsh: Invoke-Build
+  - task: PublishTestResults@2
+    inputs:
+      testRunner: JUnit
+      testResultsFiles: '**/test-results.xml'
+    condition: succeededOrFailed()
+  - task: PublishBuildArtifacts@1
+    inputs:
+      ArtifactName: vscode-powershell
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
