@@ -12,7 +12,7 @@ jobs:
   pool:
     vmImage: 'VS2017-Win2016'
   steps:
-    - powershell: .\bootstrap.ps1
+    - powershell: .\build.ps1
       displayName: 'Install pre-requisites'
 
  
