@@ -1,6 +1,5 @@
 trigger:
 - master
-- legacy/1.x
 variables:
    # Don't download unneeded packages
   - name: DOTNET_SKIP_FIRST_TIME_EXPERIENCE
