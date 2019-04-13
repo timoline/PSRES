@@ -1,0 +1,18 @@
+trigger:
+- master
+variables:
+   # Don't download unneeded packages
+  - name: DOTNET_SKIP_FIRST_TIME_EXPERIENCE
+    value: 'true'
+    # Don't send telemetry
+  - name: DOTNET_CLI_TELEMETRY_OPTOUT
+    value: 'true'
+jobs:
+- job: Windows
+  pool:
+    vmImage: 'VS2017-Win2016'
+  steps:
+    - powershell: .\build.ps1
+      displayName: 'Install pre-requisites'
+
+ 
