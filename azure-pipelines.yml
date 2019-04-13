@@ -12,6 +12,7 @@ jobs:
   pool:
     vmImage: 'VS2017-Win2016'
   steps:
-  - template: templates/ci-general.yml
+    - powershell: .\bootstrap.ps1
+      displayName: 'Install pre-requisites'
 
  
