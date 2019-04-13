@@ -1,4 +1,6 @@
-﻿PSRES
+﻿[![Build Status](https://dev.azure.com/timoline/test/_apis/build/status/timoline.PSRES?branchName=master)](https://dev.azure.com/timoline/test/_build/latest?definitionId=1&branchName=master)
+ 
+ PSRES
 ===
 RES powershell module
 
