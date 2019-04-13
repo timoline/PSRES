@@ -13,16 +13,4 @@ jobs:
   pool:
     vmImage: 'VS2017-Win2016'
   steps:
-  - template: templates/ci-general.yml
-
-- job: macOS
-  pool:
-    vmImage: 'macOS-10.13'
-  steps:
-  - template: templates/ci-general.yml
-
-- job: Linux
-  pool:
-    vmImage: 'Ubuntu-16.04'
-  steps:
-  - template: templates/ci-general.yml
+ 
