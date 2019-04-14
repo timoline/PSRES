@@ -13,7 +13,7 @@ New-Item -Type Directory out\docs -ErrorAction SilentlyContinue -Verbose
 Copy-Item -Recurse -Force src out -Verbose
 
 Remove-Module $moduleName -ErrorAction SilentlyContinue
-Import-Module $pwd\out\$moduleName.psm1 -Force -Verbose
+Import-Module out\$moduleName.psm1 -Force -Verbose
 
 New-MarkdownHelp -Module $moduleName -OutputFolder $docPath -WithModulePage -Force
 
