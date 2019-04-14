@@ -1,5 +1,5 @@
 $moduleName = "PSRES"
-$modulePath = "out\$moduleName"
+$modulePath = "$moduleName"
 $docPath = "$modulePath\docs" 
 $author = 'Timrz'
 $version = '0.0.1'
