@@ -14,4 +14,3 @@ jobs:
   steps:
     - powershell: .\build.ps1
       displayName: 'Install pre-requisites'
-
