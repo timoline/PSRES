@@ -10,3 +10,14 @@ describe 'first-test' {
     }
 
 }
+
+describe 'second-test' {
+
+    $TestNumber = 3
+    $result = $TestNumber
+
+    it 'should return 2' {
+        $result | should be 3
+    }
+
+}
