@@ -14,7 +14,6 @@ if ($Bootstrap.IsPresent)
 {
     Write-Host "Validate and install missing prerequisits for building ..."
 
-
     # For testing
     if (-not (Get-Module -Name Pester -ListAvailable))
     {

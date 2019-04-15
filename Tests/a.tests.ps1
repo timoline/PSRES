@@ -1,4 +1,4 @@
-Import-Module "$PSScriptRoot/../src/PSRES.psd1" -Force
+Import-Module "$PSScriptRoot/../src/PSRES.psd1" -Force -Verbose
 
 describe 'first-test' {
 
