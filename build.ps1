@@ -14,12 +14,6 @@ if ($Bootstrap.IsPresent)
 {
     Write-Host "Validate and install missing prerequisits for building ..."
 
-    # Dependencies of PoshNotify
-    if (-not (Get-Module -Name PSRES -ListAvailable))
-    {
-        Write-Warning "Module 'MacNotify' is missing. Installing 'MacNotify' ..."
-        Install-Module -Name PSRES -Scope CurrentUser -Force
-    }
 
     # For testing
     if (-not (Get-Module -Name Pester -ListAvailable))
