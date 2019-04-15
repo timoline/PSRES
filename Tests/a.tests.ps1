@@ -1,0 +1,1 @@
+Import-Module "$PSScriptRoot/../src/PSRES.psd1" -Force
