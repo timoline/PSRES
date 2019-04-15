@@ -34,7 +34,7 @@ if ($Test.IsPresent)
 
     if ($env:TF_BUILD)
     {
-        $res = Invoke-Pester "$PSScriptRoot/test" -OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru
+        $res = Invoke-Pester "$PSScriptRoot/tests" -OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru
         if ($res.FailedCount -gt 0) 
         { 
             throw "$($res.FailedCount) tests failed." 
