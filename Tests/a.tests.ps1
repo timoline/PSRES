@@ -16,7 +16,7 @@ describe 'second-test' {
     $TestNumber = 3
     $result = $TestNumber
 
-    it 'should return 2' {
+    it 'should return 3' {
         $result | should be 3
     }
 
