@@ -1,8 +1,5 @@
 # Thanks to Stefan Stranger
-
 # https://stefanstranger.github.io/2018/12/30/UseAzurePipelinesToPublishPowerShellModule/
-
- 
 
 trigger:
   branches:
@@ -15,3 +12,7 @@ jobs:
     vmImage: 'VS2017-Win2016'
   steps:
   - template: azure-template.yml # Template reference
+
+  - task: GitHubRelease@0
+    inputs:
+      action: 'create'
