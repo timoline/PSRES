@@ -15,4 +15,6 @@ jobs:
 
   - task: GitHubRelease@0
     inputs:
+      connection: timoline
+      userRepository: PSRES
       action: 'create'
