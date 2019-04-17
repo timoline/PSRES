@@ -16,5 +16,5 @@ jobs:
   - task: GitHubRelease@0
     inputs:
       connection: "GHC_AZDO"
-      userRepository: "timoline\PSRES"
+      userRepository: "timoline/PSRES"
       action: 'create'
