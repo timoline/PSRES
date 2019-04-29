@@ -13,7 +13,7 @@ jobs:
   steps:
   - template: azure-template.yml # Template reference
 
-  - task: GitHubRelease@0
+  - task: GitHubReleases@0
     inputs:
       connection: "GHC_AZDO"
       userRepository: "timoline/PSRES"
