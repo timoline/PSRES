@@ -12,11 +12,3 @@ jobs:
     vmImage: 'VS2017-Win2016'
   steps:
   - template: azure-template.yml # Template reference
-
-  - task: GitHubRelease@0
-    displayName: 'Create GitHub Release'
-    inputs:
-      connection: "GHC_AZDO"
-      userRepository: "timoline/PSRES"
-      action: 'create'
-      
