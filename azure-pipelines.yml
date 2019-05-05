@@ -11,7 +11,7 @@ jobs:
   pool:
     vmImage: 'VS2017-Win2016'
 
-
+steps:
 - task: Pester Powershell unittest@2
   inputs:
     ItemSpec: 'tests/*.tests.ps1'
