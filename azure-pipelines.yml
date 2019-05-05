@@ -10,5 +10,16 @@ jobs:
 - job: Windows
   pool:
     vmImage: 'VS2017-Win2016'
-  steps:
-  - template: azure-template.yml # Template reference
+
+
+- task: Pester Powershell unittest@2
+  inputs:
+    ItemSpec: 'tests/*.tests.ps1'
+    TestParams: '-OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru'
+    FailOnError: true
+
+- task: PublishTestResults@2
+  inputs:
+    testRunner: NUnit
+    testResultsFiles: '**/TestResults.xml'
+  condition: succeededOrFailed()
