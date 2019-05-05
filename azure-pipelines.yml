@@ -20,7 +20,7 @@ jobs:
     - task: PublishTestResults@2
       inputs:
         testRunner: NUnit
-        testResultsFiles: '../**/TEST-*.xml'
+        testResultsFiles: '**/TEST-*.xml'
       condition: succeededOrFailed()
 
 
