@@ -14,7 +14,7 @@ jobs:
   steps:
     - task: Pester Powershell unittest@2
       inputs:
-        ItemSpec: 'tests/*.tests.ps1'
+        ItemSpec: 'tests\*.tests.ps1'
         TestParams: '-OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru'
         FailOnError: true
 
