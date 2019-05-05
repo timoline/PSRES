@@ -15,11 +15,13 @@ jobs:
     - task: Pester Powershell unittest@2
       inputs:
         ItemSpec: 'tests\*.tests.ps1'
-        TestParams: '-OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru'
+        TestParams: '-OutputFormat NUnitXml -OutputFile TestResults.xml'
         FailOnError: true
 
     - task: PublishTestResults@2
       inputs:
         testRunner: NUnit
-        testResultsFiles: '**/TestResults.xml'
+        testResultsFiles: '../**/TEST-*.xml'
       condition: succeededOrFailed()
+
+
